@@ -54,7 +54,6 @@ const BattleBar = styled.div`
     width: 0;
     height: 3rem;
     background: green;
-    transition: width 0.03s;
   }
 `;
 
@@ -62,24 +61,29 @@ const Battle = ({ battleType, character, enemy }) => {
   const handleBattleBar = () => {
     const body = document.querySelector("body");
     const box = document.querySelector(".bar");
+    let id = -1;
     let width = 0;
     const showProgress = (e) => {
-      if (e.code !== "Space") return;
-      width += 2.5;
       if (width >= 100) width = 0;
+      width += 1;
       box.style.width = width + "%";
     };
-    const endProgress = () => {
-      console.log(`Progress: ${width}`);
+    const spacePress = (e) => {
+      if (id === -1 && e.code === "Space") {
+        id = setInterval(showProgress, 10);
+      } else {
+        clearInterval(id);
+        id = -1;
+        width = 0;
+      }
     };
 
-    body.addEventListener("keydown", showProgress);
-    body.addEventListener("keyup", endProgress);
+    body.addEventListener("keypress", spacePress);
   };
 
   useEffect(() => {
     handleBattleBar();
-  });
+  }, []);
 
   return (
     <>
