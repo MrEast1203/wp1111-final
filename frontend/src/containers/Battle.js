@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { TbSwords } from "react-icons/tb";
+import { BiShield } from "react-icons/bi";
+import { FiHeart } from "react-icons/fi";
 
 const BattleTitle = styled.h2`
   font-size: 4rem;
-  margin: 0;
+  margin: 1rem;
 `;
 
-const CharacterRegion = styled.div`
+const BattleRegion = styled.div`
   position: absolute;
-  bottom: 1rem;
-  left: 3rem;
   display: flex;
   align-items: flex-start;
+
+  &.character {
+    bottom: 1rem;
+    left: 3rem;
+  }
+
+  &.enemy {
+    top: 1rem;
+    right: 3rem;
+  }
 
   & img {
     width: 30rem;
@@ -19,86 +30,99 @@ const CharacterRegion = styled.div`
   }
 
   & ul {
+    padding: 0;
     list-style: none;
     font-size: 2rem;
+    font-weight: bold;
 
     & li {
       margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
     }
-  }
-
-  & i {
-    margin-right: 0.5rem;
   }
 `;
 
-const EnemyRegion = styled.div`
+const BattleBar = styled.div`
+  width: 50rem;
+  background: lightgrey;
   position: absolute;
-  top: 1rem;
-  right: 3rem;
-  display: flex;
-  align-items: flex-start;
+  bottom: 5rem;
+  right: 2rem;
 
-  & img {
-    width: 30rem;
-    height: 30rem;
-  }
-
-  & ul {
-    list-style: none;
-    font-size: 2rem;
-
-    & li {
-      margin: 1.5rem 0;
-    }
-  }
-
-  & i {
-    margin-right: 0.5rem;
+  & .bar {
+    width: 0;
+    height: 3rem;
+    background: green;
+    transition: width 0.03s;
   }
 `;
-
-const BattleBar = styled.div``;
 
 const Battle = ({ battleType, character, enemy }) => {
+  const handleBattleBar = () => {
+    const body = document.querySelector("body");
+    const box = document.querySelector(".bar");
+    let width = 0;
+    const showProgress = (e) => {
+      if (e.code !== "Space") return;
+      width += 2.5;
+      if (width >= 100) width = 0;
+      box.style.width = width + "%";
+    };
+    const endProgress = () => {
+      console.log(`Progress: ${width}`);
+    };
+
+    body.addEventListener("keydown", showProgress);
+    body.addEventListener("keyup", endProgress);
+  };
+
+  useEffect(() => {
+    handleBattleBar();
+  });
+
   return (
     <>
       <BattleTitle>{battleType} 戰鬥</BattleTitle>
-      <CharacterRegion>
+      <BattleRegion className="character">
         <ul>
           <li>{character.name}</li>
           <li>
-            <i className="fa-solid fa-hand-fist"></i> {character.atk}
+            <TbSwords />
+            {character.atk}
           </li>
           <li>
-            <i className="fa-solid fa-shield"></i>
+            <BiShield />
             {character.def}
           </li>
           <li>
-            <i className="fa-solid fa-heart"></i>
+            <FiHeart />
             {character.hp}
           </li>
         </ul>
         <img src={require("../images/Hero-sample.png")} alt={character.name} />
-      </CharacterRegion>
-      <EnemyRegion>
+      </BattleRegion>
+      <BattleRegion className="enemy">
         <img src={require("../images/monster.png")} alt={character.name} />
         <ul>
           <li>{enemy.name}</li>
           <li>
-            <i className="fa-solid fa-hand-fist"></i> {enemy.atk}
+            <TbSwords />
+            {enemy.atk}
           </li>
           <li>
-            <i className="fa-solid fa-shield"></i>
+            <BiShield />
             {enemy.def}
           </li>
           <li>
-            <i className="fa-solid fa-heart"></i>
+            <FiHeart />
             {enemy.hp}
           </li>
         </ul>
-      </EnemyRegion>
-      <BattleBar></BattleBar>
+      </BattleRegion>
+      <BattleBar>
+        <div className="bar"></div>
+      </BattleBar>
     </>
   );
 };

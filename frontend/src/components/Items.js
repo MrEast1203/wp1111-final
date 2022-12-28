@@ -28,6 +28,7 @@ const ItemBlock = styled.li`
     align-items: center;
     content: attr(content);
     white-space: pre-line;
+    word-break: pre-line;
     background: rgba(0, 0, 0, 0.3);
     color: #fff;
     padding: 1rem;
@@ -37,7 +38,7 @@ const ItemBlock = styled.li`
   }
 
   &:hover {
-    transform: scale(1.1);   
+    transform: scale(1.1);
   }
 
   &:hover::after {

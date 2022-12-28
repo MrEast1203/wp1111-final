@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { HiOutlineLightningBolt } from "react-icons/hi";
+import { TbSwords } from "react-icons/tb";
+import { BiShield } from "react-icons/bi";
+import { FiHeart } from "react-icons/fi";
 
 const CharacterWrapper = styled.div`
   margin: 0 1%;
@@ -17,9 +21,36 @@ const CharacterName = styled.h1`
   margin: 0;
 `;
 
-const CharacterInfo = styled.h3`
-  font-size: 1.7rem;
-  text-align: center;
+const CharacterInfo = styled.ul`
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem auto;
+  padding: 0;
+
+  & li {
+    display: flex;
+    align-items: center;
+  }
+
+  & .energy {
+    color: orange;
+  }
+
+  & .atk {
+    color: purple;
+  }
+
+  & .def {
+    color: skyblue;
+  }
+
+  & .hp {
+    color: red;
+  }
 `;
 
 const CharacterMain = ({ name, energy, atk, def, hp }) => {
@@ -28,10 +59,18 @@ const CharacterMain = ({ name, energy, atk, def, hp }) => {
       <CharacterName>{name}</CharacterName>
       <CharacterImg src={require("../images/Hero-sample.png")} alt={name} />
       <CharacterInfo>
-        <i className="fa-solid fa-bolt"></i> {energy} /{" "}
-        <i className="fa-solid fa-hand-fist"></i> {atk} /{" "}
-        <i className="fa-solid fa-shield"></i> {def} /{" "}
-        <i className="fa-solid fa-heart"></i> {hp}
+        <li className="energy">
+          <HiOutlineLightningBolt /> {energy}
+        </li>
+        <li className="atk">
+          <TbSwords /> {atk}
+        </li>
+        <li className="def">
+          <BiShield /> {def}
+        </li>
+        <li className="hp">
+          <FiHeart /> {hp}
+        </li>
       </CharacterInfo>
     </CharacterWrapper>
   );

@@ -19,7 +19,7 @@ const ButtonListWrapper = styled.ul`
 const ButtonList = ({ items }) => {
   const Buttons = items.map((ele) => {
     return (
-      <li>
+      <li key={ele.name}>
         <Button content={ele.name} operation={ele.operation} />
       </li>
     );

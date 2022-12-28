@@ -34,12 +34,12 @@ const Exit = styled.div`
 `;
 
 const testItems = [
-  { name: "Item1", content: "道具1\n+5戰鬥力" },
+  { name: "Item1", content: "道具1\n+5 戰鬥力" },
   { name: "Item2", content: "道具2\n回復血量" },
   { name: "Item3", content: "道具3\n閃避攻擊" },
-  { name: "Item4", content: "道具4\n+3戰鬥力" },
-  { name: "Item5", content: "道具5\n+12戰鬥力" },
-  { name: "Item6", content: "道具6\n多一回合" },
+  { name: "Item4", content: "道具4\n+3 戰鬥力" },
+  { name: "Item5", content: "道具5\n+12 戰鬥力" },
+  { name: "Item6", content: "道具6\n多一回合然後就可以有更多機會贏了" },
 ];
 
 const Shop = ({ money, setIsShop }) => {

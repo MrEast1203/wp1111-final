@@ -27,17 +27,8 @@ const BlockWrapper = styled.div`
 const ItemsWrpper = styled.div`
   border: 2px solid #000;
   height: 550px;
-  margin: 1rem 0;
+  margin: 2rem 0;
 `;
-
-const testItems = [
-  { name: "Item1", content: "Content1" },
-  { name: "Item2", content: "Content2" },
-  { name: "Item3", content: "Content3" },
-  { name: "Item4", content: "Content4" },
-  { name: "Item5", content: "Content5" },
-  { name: "Item6", content: "Content6" },
-];
 
 const Main = () => {
   const [isShop, setIsShop] = useState(false);
@@ -60,6 +51,14 @@ const Main = () => {
     def: 10,
     hp: 10,
     money: 1500,
+    items: [
+      { name: "Item1", content: "Content1" },
+      { name: "Item2", content: "Content2" },
+      { name: "Item3", content: "Content3" },
+      { name: "Item4", content: "Content4" },
+      { name: "Item5", content: "Content5" },
+      { name: "Item6", content: "Content6" },
+    ],
   };
 
   const testEnemy = {
@@ -76,9 +75,9 @@ const Main = () => {
   ) : (
     <MainWrapper>
       <BlockWrapper>
-        <Period timePeriod="早上" days="17" />
+        <Period timePeriod="下午" days="17" />
         <ItemsWrpper>
-          <Items items={testItems} />
+          <Items items={character.items} />
         </ItemsWrpper>
         <Money money={character.money} />
       </BlockWrapper>
@@ -96,8 +95,24 @@ const Main = () => {
         <DeathRate deathRate={30} />
         <Achievement />
       </BlockWrapper>
-      {isBuild ? <Modal messageTitle="建築" messageContent="成功建造防禦工事！" setModal={setIsBuild} /> : <></>}
-      {IsTrain ? <Modal messageTitle="訓練" messageContent="訓練成功！" setModal={setIsTrain} /> : <></>}
+      {isBuild ? (
+        <Modal
+          messageTitle="建築"
+          messageContent="成功建造防禦工事！"
+          setModal={setIsBuild}
+        />
+      ) : (
+        <></>
+      )}
+      {IsTrain ? (
+        <Modal
+          messageTitle="訓練"
+          messageContent="訓練成功！"
+          setModal={setIsTrain}
+        />
+      ) : (
+        <></>
+      )}
     </MainWrapper>
   );
 };
