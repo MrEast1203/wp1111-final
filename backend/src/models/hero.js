@@ -6,15 +6,12 @@ const HeroSchema = Schema(
   {
     id: { type: Number, required: true },
     name: { type: String, required: true },
-    img_idle: { type: String },
-    img_atk: { type: String },
-    img_takeHit: { type: String },
-    img_dead: { type: String },
-    img_defence: { type: String },
     Life: { type: Number, required: true },
     Atk: { type: Number, required: true },
-    item: [{ type: Boolean }],
+    item: [{ type: Number }],
     achieve: [{ type: Boolean }],
+    turn: { type: Number },
+    Money: { type: Number },
   },
   {
     collection: 'hero',

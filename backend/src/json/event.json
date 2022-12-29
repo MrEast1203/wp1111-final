@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "name": "First Boss",
+    "description": ["xxx來了, 勇者快打敗他！"],
+    "options": ["Ok", "打不蠃啦"],
+    "item_get": [10]
+  },
+  {
+    "id": 1,
+    "name": "國家任務",
+    "description": [
+      "國家終於有任務給你啦",
+      "為了國家, 更為了世界, 你要收集A,B,C去對抗魔王"
+    ],
+    "options": ["好"],
+    "item_get": [12]
+  },
+  {
+    "id": 2,
+    "name": "First Boss",
+    "description": ["勇者A夢救命!"],
+    "options": ["我來了", "打不蠃啦"],
+    "item_get": [11]
+  },
+  {
+    "id": 3,
+    "name": "高端",
+    "description": ["你在寶箱裏發現了高端疫苗，要打嗎？"],
+    "options": ["打", " 不打"],
+    "item_get": [9]
+  },
+  {
+    "id": 4,
+    "name": "Dog",
+    "description": ["有一隻柴犬在問你", "你是不是想色色？"],
+    "options": ["想", " 不想"],
+    "item_get": [8, 7]
+  },
+  {
+    "id": 5,
+    "name": "壺",
+    "description": ["在寶箱發現了個壺"],
+    "options": ["拿"],
+    "item_get": [6]
+  }
+]

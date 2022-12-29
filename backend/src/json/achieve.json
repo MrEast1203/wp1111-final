@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "name": "Clear",
+    "description": "Clear the game"
+  },
+  {
+    "id": 1,
+    "name": "Collector",
+    "description": "Collector all the item in the game"
+  },
+  {
+    "id": 2,
+    "name": "Ending A",
+    "description": "Clear Ending A"
+  },
+  {
+    "id": 3,
+    "name": "Ending B",
+    "description": "Clear Ending B"
+  },
+  {
+    "id": 4,
+    "name": "Ending C",
+    "description": "Clear Ending C"
+  }
+]
