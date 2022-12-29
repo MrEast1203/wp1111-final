@@ -1,0 +1,12 @@
+[
+  {
+    "id": 0,
+    "name": "wizard",
+    "img_idle": "https://i.imgur.com/vZQO020.gif",
+    "img_atk": "https://i.imgur.com/jZPEvmf.gif",
+    "img_takeHit": "https://i.imgur.com/qT5qZPP.gif",
+    "img_dead": "https://i.imgur.com/f41YeLd.gif",
+    "Life": 100,
+    "Atk": 10
+  }
+]
