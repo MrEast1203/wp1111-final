@@ -95,8 +95,8 @@
     "img": "https://i.imgur.com/d78VhQn.png",
     "description": "能吃嗎？",
     "buff": {
-      "buff_type": "",
-      "value": 0
+      "buff_type": "Life",
+      "value": 5
     }
   },
   {

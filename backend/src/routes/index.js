@@ -1,4 +1,8 @@
 import monsterRoute from './monster';
+import achieveRoute from './achieve';
+import eventRoute from './event';
+import heroRoute from './hero';
+import itemRoute from './item';
 
 const wrap =
   (fn) =>
@@ -7,6 +11,12 @@ const wrap =
 
 function main(app) {
   app.get('/api/getMonster', wrap(monsterRoute.GetMonster));
+  app.get('/api/getAchieve', wrap(achieveRoute.GetAchieve));
+  app.get('/api/getEvent', wrap(eventRoute.GetEvent));
+  app.get('/api/getHero', wrap(heroRoute.GetHero));
+  app.get('/api/getItem', wrap(itemRoute.GetItem));
+  app.post('/api/createHero', wrap(heroRoute.CreateHero));
+  app.post('/api/updateHero', wrap(heroRoute.UpdateHero));
 }
 
 export default main;
