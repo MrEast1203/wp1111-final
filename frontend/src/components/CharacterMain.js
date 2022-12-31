@@ -4,9 +4,16 @@ import { HiOutlineLightningBolt } from "react-icons/hi";
 import { TbSwords } from "react-icons/tb";
 import { BiShield } from "react-icons/bi";
 import { FiHeart } from "react-icons/fi";
+import Money from "./Money";
 
 const CharacterWrapper = styled.div`
   margin: 0 1%;
+
+  & div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 const CharacterImg = styled.img`
@@ -35,28 +42,15 @@ const CharacterInfo = styled.ul`
     display: flex;
     align-items: center;
   }
-
-  & .energy {
-    color: orange;
-  }
-
-  & .atk {
-    color: purple;
-  }
-
-  & .def {
-    color: skyblue;
-  }
-
-  & .hp {
-    color: red;
-  }
 `;
 
-const CharacterMain = ({ name, energy, atk, def, hp }) => {
+const CharacterMain = ({ name, energy, atk, def, hp, money }) => {
   return (
     <CharacterWrapper>
-      <CharacterName>{name}</CharacterName>
+      <div>
+        <CharacterName>{name}</CharacterName>
+        <Money money={money} />
+      </div>
       <CharacterImg src={require("../images/Hero-sample.png")} alt={name} />
       <CharacterInfo>
         <li className="energy">

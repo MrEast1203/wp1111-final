@@ -4,15 +4,22 @@ import { TbSwords } from "react-icons/tb";
 import { BiShield } from "react-icons/bi";
 import { FiHeart } from "react-icons/fi";
 
+const BattleWrapper = styled.div`
+  height: 100vh;
+  background: linear-gradient(45deg, #000e2b, #013b63);
+`;
+
 const BattleTitle = styled.h2`
   font-size: 4rem;
-  margin: 1rem;
-`;
+  color: #fff;
+  margin: 0 1rem;
+  `;
 
 const BattleRegion = styled.div`
   position: absolute;
   display: flex;
   align-items: flex-start;
+  color: #fff;
 
   &.character {
     bottom: 1rem;
@@ -25,8 +32,8 @@ const BattleRegion = styled.div`
   }
 
   & img {
-    width: 30rem;
-    height: 30rem;
+    width: 25rem;
+    height: 25rem;
   }
 
   & ul {
@@ -44,7 +51,7 @@ const BattleRegion = styled.div`
 `;
 
 const BattleBar = styled.div`
-  width: 50rem;
+  width: 40rem;
   background: lightgrey;
   position: absolute;
   bottom: 5rem;
@@ -53,7 +60,7 @@ const BattleBar = styled.div`
   & .bar {
     width: 0;
     height: 3rem;
-    background: green;
+    background: #feb75d;
   }
 `;
 
@@ -86,7 +93,7 @@ const Battle = ({ battleType, character, enemy }) => {
   }, []);
 
   return (
-    <>
+    <BattleWrapper>
       <BattleTitle>{battleType} 戰鬥</BattleTitle>
       <BattleRegion className="character">
         <ul>
@@ -127,7 +134,7 @@ const Battle = ({ battleType, character, enemy }) => {
       <BattleBar>
         <div className="bar"></div>
       </BattleBar>
-    </>
+    </BattleWrapper>
   );
 };
 

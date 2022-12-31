@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledButton = styled.a`
   font-size: 1.6rem;
   color: #fff;
-  background: #000;
+  background: #feb75d;
   text-align: center;
   text-decoration: none;
   padding: 1rem 0;
@@ -16,7 +16,7 @@ const StyledButton = styled.a`
   &:hover {
     font-weight: bold;
     background: transparent;
-    color: #000;
+    color: #feb75d;
   }
 
   &::before,
@@ -29,17 +29,16 @@ const StyledButton = styled.a`
     left: 0;
     box-sizing: border-box;
     transition: top 0.4s, left 0.4s;
-    z-index: -1;
   }
 
   &::before {
-    border-left: 2px solid #000;
-    border-top: 2px solid #000;
+    border-left: 2px solid #feb75d;
+    border-top: 2px solid #feb75d;
   }
 
   &::after {
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
+    border-right: 2px solid #feb75d;
+    border-bottom: 2px solid #feb75d;
   }
 
   &:hover::before {

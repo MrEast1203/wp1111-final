@@ -4,7 +4,7 @@ import { AiFillCloud } from "react-icons/ai";
 import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
 
 const PeriodWrapper = styled.ul`
-  width: 45%;
+  width: 55%;
   font-size: 1.8rem;
   font-weight: bold;
   list-style: none;

@@ -5,25 +5,27 @@ import Items from "../components/Items";
 import Money from "../components/Money";
 
 const ShopWrapper = styled.div`
+  background: linear-gradient(45deg, #000e2b, #013b63);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 1rem 1.5rem;
+  padding: 0 1rem;
 `;
 
 const ShopKeeper = styled.img`
+  width: 30rem;
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 35rem;
 `;
 
 const ShopList = styled.ul`
   list-style: none;
   width: 55%;
-  height: 33rem;
   padding: 0;
-  border: 2px solid #000;
+  border: 2px solid #feb75d;
+  border-radius: 10px;
 `;
 
 const Exit = styled.div`
@@ -37,7 +39,7 @@ const testItems = [
   { name: "Item1", content: "道具1\n+5 戰鬥力" },
   { name: "Item2", content: "道具2\n回復血量" },
   { name: "Item3", content: "道具3\n閃避攻擊" },
-  { name: "Item4", content: "道具4\n+3 戰鬥力" },
+  { name: "Item4", content: "道具4\n+3 速度" },
   { name: "Item5", content: "道具5\n+12 戰鬥力" },
   { name: "Item6", content: "道具6\n多一回合然後就可以有更多機會贏了" },
 ];

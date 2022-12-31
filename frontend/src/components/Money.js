@@ -6,7 +6,7 @@ const MoneyWrapper = styled.h2`
   width: 6.4rem;
   font-size: 2rem;
   margin: 0;
-  color: orange;
+  color: gold;
   display: flex;
   justify-content: space-between;
   align-items: center;

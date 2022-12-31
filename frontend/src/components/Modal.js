@@ -15,8 +15,10 @@ const ModalCard = styled.div`
   width: 30rem;
   height: 20rem;
   word-wrap: break-word;
-  background: #fff;
-  border: 2px solid #000;
+  background: linear-gradient(45deg, #000e2b, #013b63);
+  color: #fff;
+  border: 2px solid #feb75d;
+  border-radius: 10px;
   padding: 2.5rem;
   position: absolute;
   top: 50%;
@@ -27,9 +29,12 @@ const ModalCard = styled.div`
     margin: 0;
     text-align: center;
     font-size: 2.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #fff;
   }
 
   & p {
+    margin: 1rem 0;
     font-size: 1.5rem;
   }
 

@@ -4,7 +4,6 @@ import DeathRate from "../components/DeathRate";
 import CharacterMain from "../components/CharacterMain";
 import ButtonList from "./ButtonList";
 import Period from "../components/Period";
-import Money from "../components/Money";
 import Items from "../components/Items";
 import Achievement from "../components/Achievement";
 import Shop from "./Shop";
@@ -12,22 +11,24 @@ import Battle from "./Battle";
 import Modal from "../components/Modal";
 
 const MainWrapper = styled.div`
+  height: 100vh;
+  background: linear-gradient(45deg, #000e2b, #013b63);
   display: flex;
   justify-content: space-between;
 `;
 
 const BlockWrapper = styled.div`
   width: 31%;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 0 1%;
 `;
 
 const ItemsWrpper = styled.div`
-  border: 2px solid #000;
-  height: 550px;
-  margin: 2rem 0;
+  border: 2px solid #feb75d;
+  border-radius: 10px;
+  margin: 0.5rem 0;
 `;
 
 const Main = () => {
@@ -41,7 +42,6 @@ const Main = () => {
     { name: "訓練", operation: () => setIsTrain(true) },
     { name: "建築", operation: () => setIsBuild(true) },
     { name: "商店", operation: () => setIsShop(true) },
-    { name: "跳過", operation: null },
   ];
 
   const character = {
@@ -79,7 +79,6 @@ const Main = () => {
         <ItemsWrpper>
           <Items items={character.items} />
         </ItemsWrpper>
-        <Money money={character.money} />
       </BlockWrapper>
       <BlockWrapper>
         <CharacterMain
@@ -88,6 +87,7 @@ const Main = () => {
           atk={character.atk}
           def={character.def}
           hp={character.hp}
+          money={character.money}
         />
         <ButtonList items={MainButtons} />
       </BlockWrapper>

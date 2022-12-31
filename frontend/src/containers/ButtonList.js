@@ -12,7 +12,7 @@ const ButtonListWrapper = styled.ul`
 
   li {
     width: 44%;
-    margin: 1.3rem 3%;
+    margin: 1rem 3%;
   }
 `;
 
