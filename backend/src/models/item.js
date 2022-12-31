@@ -10,7 +10,7 @@ const ItemSchema = Schema(
     description: { type: String },
     buff: {
       buff_type: { type: String },
-      value: { type: Number },
+      value: { type: Number }
     },
   },
   {
