@@ -10,7 +10,7 @@ exports.GetHero = async (req, res) => {
 
 exports.CreateHero = async (req, res) => {
   const body = req.body;
-
+  S
   const hero = new Hero(body);
   try {
     await hero.save();
@@ -20,7 +20,7 @@ exports.CreateHero = async (req, res) => {
     res.status(403).send({ message: 'error', contents: [] });
   }
 };
-
+//ffff
 exports.UpdateHero = async (req, res) => {
   const body = req.body;
   try {
