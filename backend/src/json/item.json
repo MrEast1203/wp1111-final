@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name": "Heal Potion",
-    "img": "",
+    "img": "https://i.imgur.com/oVBAZvb.png",
     "description": "Heal 10",
     "buff": {
       "buff_type": "Health",
@@ -11,8 +11,28 @@
   },
   {
     "id": 1,
+    "name": "Great Heal Potion",
+    "img": "https://i.imgur.com/mnz08oT.png",
+    "description": "Heal 20",
+    "buff": {
+      "buff_type": "Health",
+      "value": 20
+    }
+  },
+  {
+    "id": 2,
+    "name": "Holy Potion",
+    "img": "https://i.imgur.com/gUyAhqf.png",
+    "description": "Heal 80%",
+    "buff": {
+      "buff_type": "Health",
+      "value": 0.8
+    }
+  },
+  {
+    "id": 3,
     "name": "Attack Potion",
-    "img": "",
+    "img": "https://i.imgur.com/S3ToBkz.png",
     "description": "Increase Atk 5",
     "buff": {
       "buff_type": "Attack",
@@ -20,9 +40,29 @@
     }
   },
   {
-    "id": 2,
+    "id": 4,
+    "name": "Great Attack Potion",
+    "img": "https://i.imgur.com/jpIJ7c7.png",
+    "description": "Increase Atk 10",
+    "buff": {
+      "buff_type": "Attack",
+      "value": 10
+    }
+  },
+  {
+    "id": 5,
+    "name": "Demon Potion",
+    "img": "https://i.imgur.com/fBxCUTF.png",
+    "description": "Increase Atk 10%",
+    "buff": {
+      "buff_type": "Attack",
+      "value": 0.1
+    }
+  },
+  {
+    "id": 6,
     "name": "Strength Potion",
-    "img": "",
+    "img": "https://i.imgur.com/JU0wA7N.png",
     "description": "Increase Life 10",
     "buff": {
       "buff_type": "Life",
@@ -30,7 +70,27 @@
     }
   },
   {
-    "id": 3,
+    "id": 7,
+    "name": "Great Strength Potion",
+    "img": "https://i.imgur.com/MqOJNVz.png",
+    "description": "Increase Life 20",
+    "buff": {
+      "buff_type": "Life",
+      "value": 20
+    }
+  },
+  {
+    "id": 8,
+    "name": "Brave Potion",
+    "img": "https://i.imgur.com/p2yP8yk.png",
+    "description": "Increase Life 20%",
+    "buff": {
+      "buff_type": "Life",
+      "value": 0.2
+    }
+  },
+  {
+    "id": 9,
     "name": "Guardian Angel",
     "img": "https://i.imgur.com/e6BDLx6.png",
     "description": "Heal 50% when die",
@@ -40,9 +100,9 @@
     }
   },
   {
-    "id": 4,
+    "id": 10,
     "name": "Dimansional Bleade",
-    "img": "",
+    "img": "https://i.imgur.com/QrYlrUg.png",
     "description": "Next Non-Boss Fight must win",
     "buff": {
       "buff_type": "",
@@ -50,7 +110,7 @@
     }
   },
   {
-    "id": 5,
+    "id": 11,
     "name": "Ability Fliper",
     "img": "",
     "description": "Flip the Life and Atk Data",
@@ -60,7 +120,7 @@
     }
   },
   {
-    "id": 6,
+    "id": 12,
     "name": "強欲之壺",
     "img": "https://i.imgur.com/5KukMNk.png",
     "description": "有點醜",
@@ -70,7 +130,7 @@
     }
   },
   {
-    "id": 7,
+    "id": 13,
     "name": "不可以色色",
     "img": "https://i.imgur.com/CAnONO6.png",
     "description": "不可以色色",
@@ -80,7 +140,7 @@
     }
   },
   {
-    "id": 8,
+    "id": 14,
     "name": "可以色色",
     "img": "https://i.imgur.com/qMhebwT.png",
     "description": "可以色色",
@@ -90,7 +150,7 @@
     }
   },
   {
-    "id": 9,
+    "id": 15,
     "name": "台灣價值",
     "img": "https://i.imgur.com/d78VhQn.png",
     "description": "能吃嗎？",
@@ -100,33 +160,243 @@
     }
   },
   {
-    "id": 10,
+    "id": 16,
     "name": "First Boss",
     "img": "",
-    "description": "",
+    "description": "打敗第一個Boss的證明",
     "buff": {
       "buff_type": "Attack",
       "value": 10
     }
   },
   {
-    "id": 11,
+    "id": 17,
     "name": "Second Boss",
     "img": "",
-    "description": "",
+    "description": "打敗第二個Boss的證明",
     "buff": {
       "buff_type": "Life",
       "value": 20
     }
   },
   {
-    "id": 12,
+    "id": 18,
     "name": "國王之證",
     "img": "",
+    "description": "國王給的勇者之證明",
+    "buff": {
+      "buff_type": "",
+      "value": 0
+    }
+  },
+  {
+    "id": 19,
+    "name": "勇者之劍",
+    "img": "",
+    "description": "",
+    "buff": {
+      "buff_type": "Attack",
+      "value": 20
+    }
+  },
+  {
+    "id": 20,
+    "name": "世界之盾",
+    "img": "",
+    "description": "",
+    "buff": {
+      "buff_type": "Life",
+      "value": 40
+    }
+  },
+  {
+    "id": 21,
+    "name": "帝王之戒",
+    "img": "",
+    "description": "",
+    "buff": {
+      "buff_type": "Both",
+      "value": 30
+    }
+  },
+  {
+    "id": 22,
+    "name": "朱雀的加護",
+    "img": "https://i.imgur.com/RGnMAT5.png",
+    "description": "",
+    "buff": {
+      "buff_type": "Life",
+      "value": 15
+    }
+  },
+  {
+    "id": 23,
+    "name": "玄武的加護",
+    "img": "https://i.imgur.com/uuDU7Yc.png",
+    "description": "",
+    "buff": {
+      "buff_type": "Life",
+      "value": 15
+    }
+  },
+  {
+    "id": 24,
+    "name": "白虎的加護",
+    "img": "",
+    "description": "https://i.imgur.com/VBCMpVM.png",
+    "buff": {
+      "buff_type": "Attack",
+      "value": 15
+    }
+  },
+  {
+    "id": 25,
+    "name": "青龍的加護",
+    "img": "https://i.imgur.com/YxLutRu.png",
+    "description": "",
+    "buff": {
+      "buff_type": "Attack",
+      "value": 15
+    }
+  },
+  {
+    "id": 26,
+    "name": "monster1",
+    "img": "https://i.imgur.com/5ge7TQi.png",
     "description": "",
     "buff": {
       "buff_type": "",
       "value": 0
+    }
+  },
+  {
+    "id": 27,
+    "name": "2",
+    "img": "https://i.imgur.com/Km59uMa.png",
+    "description": "",
+    "buff": {
+      "buff_type": "",
+      "value": 15
+    }
+  },
+  {
+    "id": 28,
+    "name": "3",
+    "img": "https://i.imgur.com/assU0lG.png",
+    "description": "",
+    "buff": {
+      "buff_type": "",
+      "value": 15
+    }
+  },
+  {
+    "id": 29,
+    "name": "4",
+    "img": "https://i.imgur.com/NPQcTQx.png",
+    "description": "",
+    "buff": {
+      "buff_type": "",
+      "value": 15
+    }
+  },
+  {
+    "id": 30,
+    "name": "海神的三叉戟",
+    "img": "https://i.imgur.com/eX9galH.png",
+    "description": "A",
+    "buff": {
+      "buff_type": "",
+      "value": 15
+    }
+  },
+  {
+    "id": 31,
+    "name": "古神的信徒",
+    "img": "https://i.imgur.com/ZDFsCYo.png",
+    "description": "Wah",
+    "buff": {
+      "buff_type": "",
+      "value": 15
+    }
+  },
+  {
+    "id": 32,
+    "name": "英國人的懷錶",
+    "img": "https://i.imgur.com/JraSGO3.png",
+    "description": "",
+    "buff": {
+      "buff_type": "",
+      "value": 15
+    }
+  },
+  {
+    "id": 33,
+    "name": "不死鳥的裝備",
+    "img": "https://i.imgur.com/NtAAmpE.png",
+    "description": "",
+    "buff": {
+      "buff_type": "",
+      "value": 15
+    }
+  },
+  {
+    "id": 34,
+    "name": "死神的鐮刀",
+    "img": "https://i.imgur.com/uxMHIS3.png",
+    "description": "",
+    "buff": {
+      "buff_type": "",
+      "value": 15
+    }
+  },
+  {
+    "id": 35,
+    "name": "金礦",
+    "img": "https://i.imgur.com/cJSqQ7s.png",
+    "description": "",
+    "buff": {
+      "buff_type": "",
+      "value": 15
+    }
+  },
+  {
+    "id": 36,
+    "name": "惡魔的詛咒",
+    "img": "https://i.imgur.com/X0xu22V.png",
+    "description": "",
+    "buff": {
+      "buff_type": "Both",
+      "value": -15
+    }
+  },
+  {
+    "id": 37,
+    "name": "妖怪的詛咒",
+    "img": "https://i.imgur.com/a3nSL0Q.png",
+    "description": "",
+    "buff": {
+      "buff_type": "Attack",
+      "value": -10
+    }
+  },
+  {
+    "id": 38,
+    "name": "血鬼的詛咒",
+    "img": "https://i.imgur.com/8LnV6KQ.png",
+    "description": "",
+    "buff": {
+      "buff_type": "Life",
+      "value": -20
+    }
+  },
+  {
+    "id": 39,
+    "name": "魔王的詛咒",
+    "img": "https://i.imgur.com/oBHSf4E.png",
+    "description": "",
+    "buff": {
+      "buff_type": "Both",
+      "value": -30
     }
   }
 ]

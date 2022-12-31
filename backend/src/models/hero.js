@@ -12,6 +12,8 @@ const HeroSchema = Schema(
     achieve: [{ type: Boolean }],
     turn: { type: Number },
     Money: { type: Number },
+    max_life: { type: Number },
+    battle_card: { type: Number },
   },
   {
     collection: 'hero',

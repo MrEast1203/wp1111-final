@@ -23,5 +23,45 @@
     "id": 4,
     "name": "Ending C",
     "description": "Clear Ending C"
+  },
+  {
+    "id": 5,
+    "name": "Get All quest item",
+    "description": "Quest Complete"
+  },
+  {
+    "id": 6,
+    "name": "Get All Myth item",
+    "description": "See All the myth member Complete"
+  },
+  {
+    "id": 7,
+    "name": "curse king",
+    "description": "Having 10up curse"
+  },
+  {
+    "id": 8,
+    "name": "rich",
+    "description": "Having 10000up money"
+  },
+  {
+    "id": 9,
+    "name": "Tank",
+    "description": "Having 1000up Life"
+  },
+  {
+    "id": 10,
+    "name": "Tank",
+    "description": "Having 500up Atk"
+  },
+  {
+    "id": 10,
+    "name": "Real-Collector",
+    "description": "Having 99up of an item"
+  },
+  {
+    "id": 11,
+    "name": "Basaka",
+    "description": "Do not heal for the whole game"
   }
 ]

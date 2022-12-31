@@ -9,6 +9,7 @@ const EventSchema = Schema(
     description: [{ type: String }],
     options: [{ type: String }],
     item_get: [{ type: Number }],
+    buff_value: [{ type: Number }],
   },
   {
     collection: 'event',
