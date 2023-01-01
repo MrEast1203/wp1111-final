@@ -1,12 +1,79 @@
 [
   {
     "id": 0,
-    "name": "wizard",
+    "name": "Wizard",
     "img_idle": "https://i.imgur.com/vZQO020.gif",
     "img_atk": "https://i.imgur.com/jZPEvmf.gif",
     "img_takeHit": "https://i.imgur.com/qT5qZPP.gif",
     "img_dead": "https://i.imgur.com/f41YeLd.gif",
+    "Life": 1000,
+    "Atk": 80,
+    "itemDrop": 16
+  },
+  {
+    "id": 1,
+    "name": "Bright",
+    "img_idle": "https://i.imgur.com/p9waGr4.gif",
+    "img_atk": "https://i.imgur.com/gpetTt2.gif",
+    "img_takeHit": "https://i.imgur.com/NbOFVgG.gif",
+    "img_dead": "https://i.imgur.com/EiWAZOt.gif",
+    "Life": 2000,
+    "Atk": 60,
+    "itemDrop": 17
+  },
+  {
+    "id": 2,
+    "name": "Boss",
+    "img_idle": "https://i.imgur.com/fE6Z8N3.gif",
+    "img_atk": "https://i.imgur.com/AmFqYUe.gif",
+    "img_takeHit": "https://i.imgur.com/HFopbuA.gif",
+    "img_dead": "https://i.imgur.com/6WmXKf4.gif",
+    "Life": 3000,
+    "Atk": 100,
+    "itemDrop": -1
+  },
+  {
+    "id": 3,
+    "name": "Bat",
+    "img_idle": "https://i.imgur.com/ddDwBHY.gif",
+    "img_atk": "https://i.imgur.com/wT400XV.gif",
+    "img_takeHit": "https://i.imgur.com/p72lJ25.gif",
+    "img_dead": "https://i.imgur.com/HIAD2D5.gif",
+    "Life": 80,
+    "Atk": 10,
+    "itemDrop": 26
+  },
+  {
+    "id": 4,
+    "name": "Golem",
+    "img_idle": "https://i.imgur.com/X4Afgc2.gif",
+    "img_atk": "https://i.imgur.com/nJQlB8K.gif",
+    "img_takeHit": "https://i.imgur.com/EbcD4T9.gif",
+    "img_dead": "https://i.imgur.com/TpsbP68.gif",
+    "Life": 150,
+    "Atk": 8,
+    "itemDrop": 27
+  },
+  {
+    "id": 5,
+    "name": "Rat",
+    "img_idle": "https://i.imgur.com/jS0FWA0.gif",
+    "img_atk": "https://i.imgur.com/6GChU3L.gif",
+    "img_takeHit": "https://i.imgur.com/xNfsXxz.gif",
+    "img_dead": "https://i.imgur.com/HCGRmDG.gif",
     "Life": 100,
-    "Atk": 10
+    "Atk": 25,
+    "itemDrop": 28
+  },
+  {
+    "id": 6,
+    "name": "Slime",
+    "img_idle": "https://i.imgur.com/BANTp03.gif",
+    "img_atk": "https://i.imgur.com/Fss3wKC.gif",
+    "img_takeHit": "https://i.imgur.com/LZ2cFvz.gif",
+    "img_dead": "https://i.imgur.com/KvMIA12.gif",
+    "Life": 500,
+    "Atk": 8,
+    "itemDrop": 29
   }
 ]

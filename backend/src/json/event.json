@@ -31,7 +31,7 @@
     "name": "高端",
     "description": ["你在寶箱裏發現了高端疫苗，要打嗎？"],
     "options": ["打", " 不打"],
-    "item_get": [9, -1],
+    "item_get": [15, -1],
     "buff_value": [0, 0]
   },
   {
@@ -39,7 +39,7 @@
     "name": "Dog",
     "description": ["有一隻柴犬在問你", "你是不是想色色？"],
     "options": ["想", " 不想"],
-    "item_get": [8, 7],
+    "item_get": [14, 13],
     "buff_value": [0, 0]
   },
   {
@@ -47,7 +47,7 @@
     "name": "壺",
     "description": ["在寶箱發現了個壺", "你超級超級想要！"],
     "options": ["拿"],
-    "item_get": [6],
+    "item_get": [12],
     "buff_value": [-10]
   },
   {
@@ -125,10 +125,10 @@
   {
     "id": 13,
     "name": "偵探",
-    "description": ["某偵探的懷表掉了，要拿嗎？"],
-    "options": ["yes", "no"],
-    "item_get": [32, -1],
-    "buff_value": [-30, 0]
+    "description": ["Coffee or Tea?"],
+    "options": ["Coffee", "Tea"],
+    "item_get": [1, 32],
+    "buff_value": [4, 0]
   },
   {
     "id": 14,
@@ -147,10 +147,58 @@
     "buff_value": [0]
   },
   {
-    "id": 15,
+    "id": 16,
     "name": "final boss",
     "description": ["fight boss"],
     "options": ["yes"],
+    "item_get": [-1],
+    "buff_value": [0]
+  },
+  {
+    "id": 17,
+    "name": "好人",
+    "description": ["你要什麼藥水？"],
+    "options": ["Heal", "Attack", "Strength"],
+    "item_get": [0, 3, 6],
+    "buff_value": [1, 4, 7]
+  },
+  {
+    "id": 18,
+    "name": "發現黃金",
+    "description": ["要消耗體力取黃金嗎？"],
+    "options": ["取", "不"],
+    "item_get": [35, -1],
+    "buff_value": [-40, 0]
+  },
+  {
+    "id": 996,
+    "name": "fail",
+    "description": ["Fail"],
+    "options": ["restart"],
+    "item_get": [-1],
+    "buff_value": [0]
+  },
+  {
+    "id": 997,
+    "name": "Ending C",
+    "description": ["Win, but death rate>=60%"],
+    "options": ["restart"],
+    "item_get": [-1],
+    "buff_value": [0]
+  },
+  {
+    "id": 998,
+    "name": "Ending B",
+    "description": ["Win"],
+    "options": ["Yeah"],
+    "item_get": [-1],
+    "buff_value": [0]
+  },
+  {
+    "id": 999,
+    "name": "Ending A",
+    "description": ["收集到9,10,11,並打敗final boss"],
+    "options": ["回去"],
     "item_get": [-1],
     "buff_value": [0]
   }

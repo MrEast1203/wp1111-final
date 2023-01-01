@@ -12,6 +12,7 @@ const MonsterSchema = Schema(
     img_dead: { type: String },
     Life: { type: Number, required: true },
     Atk: { type: Number, required: true },
+    itemDrop: { type: Number },
   },
   {
     collection: 'monster',

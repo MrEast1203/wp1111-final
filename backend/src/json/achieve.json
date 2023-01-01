@@ -32,7 +32,7 @@
   {
     "id": 6,
     "name": "Get All Myth item",
-    "description": "See All the myth member Complete"
+    "description": "See All the myth member"
   },
   {
     "id": 7,
@@ -51,16 +51,16 @@
   },
   {
     "id": 10,
-    "name": "Tank",
+    "name": "Cannon",
     "description": "Having 500up Atk"
   },
   {
-    "id": 10,
+    "id": 11,
     "name": "Real-Collector",
     "description": "Having 99up of an item"
   },
   {
-    "id": 11,
+    "id": 12,
     "name": "Basaka",
     "description": "Do not heal for the whole game"
   }

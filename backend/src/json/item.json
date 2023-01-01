@@ -5,9 +5,10 @@
     "img": "https://i.imgur.com/oVBAZvb.png",
     "description": "Heal 10",
     "buff": {
-      "buff_type": "Health",
+      "buff_type": "Heal",
       "value": 10
-    }
+    },
+    "unique": false
   },
   {
     "id": 1,
@@ -15,9 +16,10 @@
     "img": "https://i.imgur.com/mnz08oT.png",
     "description": "Heal 20",
     "buff": {
-      "buff_type": "Health",
+      "buff_type": "Heal",
       "value": 20
-    }
+    },
+    "unique": false
   },
   {
     "id": 2,
@@ -25,9 +27,10 @@
     "img": "https://i.imgur.com/gUyAhqf.png",
     "description": "Heal 80%",
     "buff": {
-      "buff_type": "Health",
+      "buff_type": "Heal",
       "value": 0.8
-    }
+    },
+    "unique": false
   },
   {
     "id": 3,
@@ -37,7 +40,8 @@
     "buff": {
       "buff_type": "Attack",
       "value": 5
-    }
+    },
+    "unique": false
   },
   {
     "id": 4,
@@ -47,7 +51,8 @@
     "buff": {
       "buff_type": "Attack",
       "value": 10
-    }
+    },
+    "unique": false
   },
   {
     "id": 5,
@@ -57,7 +62,8 @@
     "buff": {
       "buff_type": "Attack",
       "value": 0.1
-    }
+    },
+    "unique": false
   },
   {
     "id": 6,
@@ -67,7 +73,8 @@
     "buff": {
       "buff_type": "Life",
       "value": 10
-    }
+    },
+    "unique": false
   },
   {
     "id": 7,
@@ -77,7 +84,8 @@
     "buff": {
       "buff_type": "Life",
       "value": 20
-    }
+    },
+    "unique": false
   },
   {
     "id": 8,
@@ -87,7 +95,8 @@
     "buff": {
       "buff_type": "Life",
       "value": 0.2
-    }
+    },
+    "unique": false
   },
   {
     "id": 9,
@@ -95,29 +104,32 @@
     "img": "https://i.imgur.com/e6BDLx6.png",
     "description": "Heal 50% when die",
     "buff": {
-      "buff_type": "Health",
+      "buff_type": "Heal",
       "value": 0.5
-    }
+    },
+    "unique": true
   },
   {
     "id": 10,
     "name": "Dimansional Bleade",
     "img": "https://i.imgur.com/QrYlrUg.png",
-    "description": "Next Non-Boss Fight must win",
+    "description": "Remove all the curse by 1",
     "buff": {
-      "buff_type": "",
+      "buff_type": "Remove",
       "value": 0
-    }
+    },
+    "unique": true
   },
   {
     "id": 11,
     "name": "Ability Fliper",
-    "img": "",
+    "img": "https://i.imgur.com/IgefttD.png",
     "description": "Flip the Life and Atk Data",
     "buff": {
       "buff_type": "Flip",
       "value": 0
-    }
+    },
+    "unique": true
   },
   {
     "id": 12,
@@ -126,8 +138,9 @@
     "description": "有點醜",
     "buff": {
       "buff_type": "",
-      "value": 0
-    }
+      "value": 10
+    },
+    "unique": false
   },
   {
     "id": 13,
@@ -136,8 +149,9 @@
     "description": "不可以色色",
     "buff": {
       "buff_type": "",
-      "value": 0
-    }
+      "value": 10
+    },
+    "unique": false
   },
   {
     "id": 14,
@@ -146,8 +160,9 @@
     "description": "可以色色",
     "buff": {
       "buff_type": "",
-      "value": 0
-    }
+      "value": 10
+    },
+    "unique": false
   },
   {
     "id": 15,
@@ -157,67 +172,74 @@
     "buff": {
       "buff_type": "Life",
       "value": 5
-    }
+    },
+    "unique": false
   },
   {
     "id": 16,
     "name": "First Boss",
-    "img": "",
+    "img": "https://i.imgur.com/vZQO020.gif",
     "description": "打敗第一個Boss的證明",
     "buff": {
       "buff_type": "Attack",
       "value": 10
-    }
+    },
+    "unique": false
   },
   {
     "id": 17,
     "name": "Second Boss",
-    "img": "",
+    "img": "https://i.imgur.com/p9waGr4.gif",
     "description": "打敗第二個Boss的證明",
     "buff": {
       "buff_type": "Life",
       "value": 20
-    }
+    },
+    "unique": false
   },
   {
     "id": 18,
     "name": "國王之證",
-    "img": "",
+    "img": "https://i.imgur.com/iKeN6yA.png",
     "description": "國王給的勇者之證明",
     "buff": {
       "buff_type": "",
       "value": 0
-    }
+    },
+    "unique": true
   },
   {
     "id": 19,
     "name": "勇者之劍",
-    "img": "",
+    "img": "https://i.imgur.com/qjzBb1k.png",
     "description": "",
     "buff": {
       "buff_type": "Attack",
       "value": 20
-    }
+    },
+    "unique": true
   },
   {
     "id": 20,
     "name": "世界之盾",
-    "img": "",
+    "img": "https://i.imgur.com/q3rNS9y.png",
     "description": "",
     "buff": {
       "buff_type": "Life",
       "value": 40
-    }
+    },
+    "unique": true
   },
   {
     "id": 21,
     "name": "帝王之戒",
-    "img": "",
+    "img": "https://i.imgur.com/KwNcbLN.png",
     "description": "",
     "buff": {
       "buff_type": "Both",
       "value": 30
-    }
+    },
+    "unique": true
   },
   {
     "id": 22,
@@ -227,7 +249,8 @@
     "buff": {
       "buff_type": "Life",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 23,
@@ -237,7 +260,8 @@
     "buff": {
       "buff_type": "Life",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 24,
@@ -247,7 +271,8 @@
     "buff": {
       "buff_type": "Attack",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 25,
@@ -257,7 +282,8 @@
     "buff": {
       "buff_type": "Attack",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 26,
@@ -267,7 +293,8 @@
     "buff": {
       "buff_type": "",
       "value": 0
-    }
+    },
+    "unique": false
   },
   {
     "id": 27,
@@ -277,7 +304,8 @@
     "buff": {
       "buff_type": "",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 28,
@@ -287,7 +315,8 @@
     "buff": {
       "buff_type": "",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 29,
@@ -297,7 +326,8 @@
     "buff": {
       "buff_type": "",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 30,
@@ -307,7 +337,8 @@
     "buff": {
       "buff_type": "",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 31,
@@ -317,7 +348,8 @@
     "buff": {
       "buff_type": "",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 32,
@@ -327,7 +359,8 @@
     "buff": {
       "buff_type": "",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 33,
@@ -337,7 +370,8 @@
     "buff": {
       "buff_type": "",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 34,
@@ -347,7 +381,8 @@
     "buff": {
       "buff_type": "",
       "value": 15
-    }
+    },
+    "unique": false
   },
   {
     "id": 35,
@@ -356,8 +391,9 @@
     "description": "",
     "buff": {
       "buff_type": "",
-      "value": 15
-    }
+      "value": 1500
+    },
+    "unique": false
   },
   {
     "id": 36,
@@ -367,7 +403,8 @@
     "buff": {
       "buff_type": "Both",
       "value": -15
-    }
+    },
+    "unique": false
   },
   {
     "id": 37,
@@ -377,7 +414,8 @@
     "buff": {
       "buff_type": "Attack",
       "value": -10
-    }
+    },
+    "unique": false
   },
   {
     "id": 38,
@@ -387,7 +425,8 @@
     "buff": {
       "buff_type": "Life",
       "value": -20
-    }
+    },
+    "unique": false
   },
   {
     "id": 39,
@@ -397,6 +436,7 @@
     "buff": {
       "buff_type": "Both",
       "value": -30
-    }
+    },
+    "unique": false
   }
 ]

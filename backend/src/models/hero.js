@@ -4,14 +4,14 @@ const Schema = mongoose.Schema;
 
 const HeroSchema = Schema(
   {
-    id: { type: Number, required: true },
+    id: { type: String, required: true },
     name: { type: String, required: true },
-    Life: { type: Number, required: true },
-    Atk: { type: Number, required: true },
+    life: { type: Number, required: true },
+    atk: { type: Number, required: true },
     item: [{ type: Number }],
     achieve: [{ type: Boolean }],
     turn: { type: Number },
-    Money: { type: Number },
+    money: { type: Number },
     max_life: { type: Number },
     battle_card: { type: Number },
   },
