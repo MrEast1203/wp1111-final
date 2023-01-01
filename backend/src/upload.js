@@ -10,7 +10,7 @@ import itemData from './json/item.json';
 
 const dataInit = async () => {
   const checkMonster = await Monster.find();
-  const no_monster = 1; //number of monster
+  const no_monster = 7; //number of monster
 
   if (checkMonster.length !== no_monster) {
     console.log('Total of monster is not equal to default');
@@ -21,7 +21,7 @@ const dataInit = async () => {
   }
 
   const checkAchieve = await Achieve.find();
-  const no_achieve = 5; //number of achieve
+  const no_achieve = 13; //number of achieve
 
   if (checkAchieve.length !== no_achieve) {
     console.log('Total of achieve is not equal to default');
@@ -32,7 +32,7 @@ const dataInit = async () => {
   }
 
   const checkEvent = await Event.find();
-  const no_event = 6; //number of Event
+  const no_event = 25; //number of Event
 
   if (checkEvent.length !== no_event) {
     console.log('Total of Event is not equal to default');
@@ -43,7 +43,7 @@ const dataInit = async () => {
   }
 
   const checkItem = await Item.find();
-  const no_Item = 13; //number of Item
+  const no_Item = 40; //number of Item
 
   if (checkItem.length !== no_Item) {
     console.log('Total of Item is not equal to default');
