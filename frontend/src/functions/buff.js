@@ -6,23 +6,23 @@ const getBuff = (
   buffValue,
   items
 ) => {
-  if (buffType === 'Heal') {
+  if (buffType === "Heal") {
     let newLife = heroLife + buffValue;
     newLife = Math.min(newLife, heroMaxLife);
-    return { change: 'life', value: [newLife] };
+    return { change: "life", value: [newLife] };
   }
-  if (buffType === 'Attack') {
-    return { change: 'atk', value: [heroAtk + buffValue] };
+  if (buffType === "Attack") {
+    return { change: "atk", value: [heroAtk + buffValue] };
   }
-  if (buffType === 'Life') {
+  if (buffType === "Life") {
     return {
-      change: 'max_life',
+      change: "max_life",
       value: [heroMaxLife + buffValue, heroLife + buffValue],
     };
   }
-  if (buffType === 'Both') {
+  if (buffType === "Both") {
     return {
-      change: 'both',
+      change: "both",
       value: [
         heroMaxLife + buffValue,
         heroLife + buffValue,
@@ -30,17 +30,17 @@ const getBuff = (
       ],
     };
   }
-  if (buffType === 'Flip') {
+  if (buffType === "Flip") {
     let newAtk = heroLife;
     let newMaxLife = heroAtk;
     let newLife = Math.min(newMaxLife, heroLife);
-    return { change: 'both', value: [newMaxLife, newLife, newAtk] };
+    return { change: "both", value: [newMaxLife, newLife, newAtk] };
   }
-  if (buffType === 'Remove') {
+  if (buffType === "Remove") {
     for (let i = 0; i < 4; i++) {
       if (items[i + 36] > 0) items[i + 36] - 1;
     }
-    return { change: 'item', value: items };
+    return { change: "item", value: items };
   }
 };
 

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { TbSwords } from "react-icons/tb";
-import { BiShield } from "react-icons/bi";
 import { FiHeart } from "react-icons/fi";
+import BattleChoose from "./BattleChoose";
 
 const BattleWrapper = styled.div`
   height: 100vh;
@@ -13,7 +13,7 @@ const BattleTitle = styled.h2`
   font-size: 4rem;
   color: #fff;
   margin: 0 1rem;
-  `;
+`;
 
 const BattleRegion = styled.div`
   position: absolute;
@@ -50,12 +50,15 @@ const BattleRegion = styled.div`
   }
 `;
 
+const BattleBarRegion = styled.div`
+  position: absolute;
+  bottom: 3rem;
+  right: 2rem;
+`;
+
 const BattleBar = styled.div`
   width: 40rem;
   background: lightgrey;
-  position: absolute;
-  bottom: 5rem;
-  right: 2rem;
 
   & .bar {
     width: 0;
@@ -64,50 +67,47 @@ const BattleBar = styled.div`
   }
 `;
 
-const Battle = ({ battleType, character, enemy }) => {
-  const handleBattleBar = () => {
-    const body = document.querySelector("body");
-    const box = document.querySelector(".bar");
-    let id = -1;
-    let width = 0;
-    const showProgress = (e) => {
-      if (width >= 100) width = 0;
-      width += 1;
-      box.style.width = width + "%";
-    };
-    const spacePress = (e) => {
-      if (id === -1 && e.code === "Space") {
-        id = setInterval(showProgress, 10);
-      } else {
-        clearInterval(id);
-        id = -1;
-        width = 0;
-      }
-    };
+const Battle = ({ character, enemy }) => {
+  const [battleChoose, setBattleChoose] = useState(false);
+  const [battleType, setBattleType] = useState("");
 
-    body.addEventListener("keypress", spacePress);
-  };
+  // const handleBattleBar = () => {
+  //   const body = document.querySelector("body");
+  //   const box = document.querySelector(".bar");
+  //   let width = 0;
+  //   const showProgress = (e) => {
+  //     if (width >= 103) width = 0;
+  //     width += 1;
+  //     box.style.width = width + "%";
+  //   };
+  //   let id = setInterval(showProgress, 10);
+  //   const spacePress = (e) => {
+  //     if (e.code === "Space") {
+  //       clearInterval(id);
+  //       id = -1;
+  //       width = 0;
+  //     }
+  //   };
 
-  useEffect(() => {
-    handleBattleBar();
-  }, []);
+  //   body.addEventListener("keypress", spacePress);
+  // };
 
-  return (
+  // useEffect(() => {
+  //   handleBattleBar();
+  // }, []);
+
+  return battleChoose ? (
     <BattleWrapper>
-      <BattleTitle>{battleType} 戰鬥</BattleTitle>
+      <BattleTitle>{battleType}</BattleTitle>
       <BattleRegion className="character">
         <ul>
           <li>{character.name}</li>
           <li>
-            <TbSwords />
+            <TbSwords style={{ marginRight: "0.5rem" }} />
             {character.atk}
           </li>
           <li>
-            <BiShield />
-            {character.def}
-          </li>
-          <li>
-            <FiHeart />
+            <FiHeart style={{ marginRight: "0.5rem" }} />
             {character.hp}
           </li>
         </ul>
@@ -118,23 +118,27 @@ const Battle = ({ battleType, character, enemy }) => {
         <ul>
           <li>{enemy.name}</li>
           <li>
-            <TbSwords />
+            <TbSwords style={{ marginRight: "0.5rem" }} />
             {enemy.atk}
           </li>
           <li>
-            <BiShield />
-            {enemy.def}
-          </li>
-          <li>
-            <FiHeart />
+            <FiHeart style={{ marginRight: "0.5rem" }} />
             {enemy.hp}
           </li>
         </ul>
       </BattleRegion>
-      <BattleBar>
-        <div className="bar"></div>
-      </BattleBar>
+      <BattleBarRegion>
+        <BattleBar>
+          <div className="bar"></div>
+        </BattleBar>
+      </BattleBarRegion>
     </BattleWrapper>
+  ) : (
+    <BattleChoose
+      setBattleChoose={setBattleChoose}
+      setBattleType={setBattleType}
+      items={character.items}
+    />
   );
 };
 

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { HiOutlineLightningBolt } from "react-icons/hi";
 import { TbSwords } from "react-icons/tb";
-import { BiShield } from "react-icons/bi";
 import { FiHeart } from "react-icons/fi";
 import Money from "./Money";
 
@@ -17,8 +16,8 @@ const CharacterWrapper = styled.div`
 `;
 
 const CharacterImg = styled.img`
-  width: 15rem;
-  height: 15rem;
+  width: 10rem;
+  height: 10rem;
   display: block;
   margin: 0 auto;
 `;
@@ -54,16 +53,13 @@ const CharacterMain = ({ name, energy, atk, def, hp, money }) => {
       <CharacterImg src={require("../images/Hero-sample.png")} alt={name} />
       <CharacterInfo>
         <li className="energy">
-          <HiOutlineLightningBolt /> {energy}
+          <HiOutlineLightningBolt style={{ marginRight: "0.5rem" }} /> {energy}
         </li>
         <li className="atk">
-          <TbSwords /> {atk}
-        </li>
-        <li className="def">
-          <BiShield /> {def}
+          <TbSwords style={{ marginRight: "0.5rem" }} /> {atk}
         </li>
         <li className="hp">
-          <FiHeart /> {hp}
+          <FiHeart style={{ marginRight: "0.5rem" }} /> {hp}
         </li>
       </CharacterInfo>
     </CharacterWrapper>

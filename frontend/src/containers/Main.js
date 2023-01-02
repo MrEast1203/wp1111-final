@@ -12,9 +12,12 @@ import Modal from "../components/Modal";
 
 const MainWrapper = styled.div`
   height: 100vh;
-  background: linear-gradient(45deg, #000e2b, #013b63);
   display: flex;
+  background: linear-gradient(45deg, #000e2b, #013b63);
   justify-content: space-between;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  animate: 3s ease-in background-flow;
 `;
 
 const BlockWrapper = styled.div`
@@ -36,23 +39,24 @@ const Main = () => {
   const [isBattle, setIsBattle] = useState(false);
   const [isBuild, setIsBuild] = useState(false);
   const [IsTrain, setIsTrain] = useState(false);
+  const [isRest, setIsRest] = useState(false);
 
   const MainButtons = [
     { name: "戰鬥", operation: () => setIsBattle(true) },
     { name: "訓練", operation: () => setIsTrain(true) },
     { name: "建築", operation: () => setIsBuild(true) },
     { name: "商店", operation: () => setIsShop(true) },
+    { name: "休息", operation: () => setIsRest(true) },
   ];
 
   const character = {
     name: "無名英雄",
     energy: 10,
     atk: 10,
-    def: 10,
     hp: 10,
     money: 1500,
     items: [
-      { name: "Item1", content: "Content1" },
+      { name: "Item1", content: "Content1\n售出：$100" },
       { name: "Item2", content: "Content2" },
       { name: "Item3", content: "Content3" },
       { name: "Item4", content: "Content4" },
@@ -71,7 +75,11 @@ const Main = () => {
   return isBattle ? (
     <Battle battleType="普通" character={character} enemy={testEnemy} />
   ) : isShop ? (
-    <Shop money={character.money} setIsShop={() => setIsShop(false)} />
+    <Shop
+      money={character.money}
+      items={character.items}
+      setIsShop={() => setIsShop(false)}
+    />
   ) : (
     <MainWrapper>
       <BlockWrapper>
@@ -109,6 +117,12 @@ const Main = () => {
           messageTitle="訓練"
           messageContent="訓練成功！"
           setModal={setIsTrain}
+        />
+      ) : isRest ? (
+        <Modal
+          messageTitle="休息"
+          messageContent="休息一回合，回復 20% 生命。"
+          setModal={setIsRest}
         />
       ) : (
         <></>

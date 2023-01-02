@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.a`
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #fff;
   background: #feb75d;
   text-align: center;
