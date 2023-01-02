@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { TbSwords } from "react-icons/tb";
 import { FiHeart } from "react-icons/fi";
-import BattleChoose from "./BattleChoose";
 
 const BattleWrapper = styled.div`
   height: 100vh;
-  background: linear-gradient(45deg, #000e2b, #013b63);
+  background: linear-gradient(to right, #261326, #c94f44);
 `;
 
 const BattleTitle = styled.h2`
@@ -67,36 +66,39 @@ const BattleBar = styled.div`
   }
 `;
 
-const Battle = ({ character, enemy }) => {
-  const [battleChoose, setBattleChoose] = useState(false);
-  const [battleType, setBattleType] = useState("");
+const Battle = ({ character, battleType }) => {
+  const enemy = {
+    name: "怪物",
+    atk: 5,
+    hp: 20,
+  };
 
-  // const handleBattleBar = () => {
-  //   const body = document.querySelector("body");
-  //   const box = document.querySelector(".bar");
-  //   let width = 0;
-  //   const showProgress = (e) => {
-  //     if (width >= 103) width = 0;
-  //     width += 1;
-  //     box.style.width = width + "%";
-  //   };
-  //   let id = setInterval(showProgress, 10);
-  //   const spacePress = (e) => {
-  //     if (e.code === "Space") {
-  //       clearInterval(id);
-  //       id = -1;
-  //       width = 0;
-  //     }
-  //   };
+  const handleBattleBar = () => {
+    const body = document.querySelector("body");
+    const box = document.querySelector(".bar");
+    let width = 0;
+    const showProgress = (e) => {
+      if (width >= 103) width = 0;
+      width += 1;
+      box.style.width = width + "%";
+    };
+    let id = setInterval(showProgress, 10);
+    const spacePress = (e) => {
+      if (e.code === "Space") {
+        clearInterval(id);
+        id = -1;
+        width = 0;
+      }
+    };
 
-  //   body.addEventListener("keypress", spacePress);
-  // };
+    body.addEventListener("keypress", spacePress);
+  };
 
-  // useEffect(() => {
-  //   handleBattleBar();
-  // }, []);
+  useEffect(() => {
+    handleBattleBar();
+  }, []);
 
-  return battleChoose ? (
+  return (
     <BattleWrapper>
       <BattleTitle>{battleType}</BattleTitle>
       <BattleRegion className="character">
@@ -133,12 +135,6 @@ const Battle = ({ character, enemy }) => {
         </BattleBar>
       </BattleBarRegion>
     </BattleWrapper>
-  ) : (
-    <BattleChoose
-      setBattleChoose={setBattleChoose}
-      setBattleType={setBattleType}
-      items={character.items}
-    />
   );
 };
 

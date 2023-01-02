@@ -1,8 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import getCard from "../functions/battle_card";
 import styled from "styled-components";
 import Items from "../components/Items";
 import BattleCard from "../components/BattleCard";
+import Battle from "./Battle";
 
 const BattleChooseWrapper = styled.div`
   background: linear-gradient(to right, #261326, #c94f44);
@@ -30,7 +32,10 @@ const BattleCardsRegion = styled.div`
   justify-content: space-around;
 `;
 
-const BattleChoose = ({ items, setBattleType, setBattleChoose }) => {
+const BattleChoose = ({ character }) => {
+  const [battleChoose, setBattleChoose] = useState(false);
+  const [battleType, setBattleType] = useState("");
+
   const battleCard = getCard();
   const battleTypeDict = {
     Event: "事件",
@@ -39,11 +44,13 @@ const BattleChoose = ({ items, setBattleType, setBattleChoose }) => {
     Rest: "休息",
   };
 
-  return (
+  return battleChoose ? (
+    <Battle battleType={battleType} character={character} />
+  ) : (
     <BattleChooseWrapper>
       <ItemsWrpper>
         <h2>使用道具</h2>
-        <Items items={items} />
+        <Items items={character.items} />
       </ItemsWrpper>
       <BattleCardsRegion>
         <BattleCard

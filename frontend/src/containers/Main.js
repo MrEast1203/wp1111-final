@@ -7,8 +7,8 @@ import Period from "../components/Period";
 import Items from "../components/Items";
 import Achievement from "../components/Achievement";
 import Shop from "./Shop";
-import Battle from "./Battle";
 import Modal from "../components/Modal";
+import BattleChoose from "./BattleChoose";
 
 const MainWrapper = styled.div`
   height: 100vh;
@@ -65,15 +65,8 @@ const Main = () => {
     ],
   };
 
-  const testEnemy = {
-    name: "怪物",
-    atk: 5,
-    def: 1,
-    hp: 20,
-  };
-
   return isBattle ? (
-    <Battle battleType="普通" character={character} enemy={testEnemy} />
+    <BattleChoose character={character} />
   ) : isShop ? (
     <Shop
       money={character.money}
