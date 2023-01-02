@@ -2,11 +2,13 @@ import Monster from './models/monster';
 import Achieve from './models/achieve';
 import Event from './models/event';
 import Item from './models/item';
+import Hero from './models/hero';
 
 import monsterData from './json/monster.json';
 import achieveData from './json/achieve.json';
 import eventData from './json/event.json';
 import itemData from './json/item.json';
+import heroData from './json/hero.json';
 
 const dataInit = async () => {
   const checkMonster = await Monster.find();
@@ -51,6 +53,17 @@ const dataInit = async () => {
     await Item.insertMany(itemData);
   } else {
     console.log('Item DB is correct');
+  }
+
+  const checkHero = await Hero.find();
+  const no_Hero = 1; //number of Item
+
+  if (checkHero.length !== no_Hero) {
+    console.log('Test Hero not exists');
+    await Hero.deleteMany({});
+    await Hero.insertMany(heroData);
+  } else {
+    console.log('Hero for test is here now');
   }
 };
 

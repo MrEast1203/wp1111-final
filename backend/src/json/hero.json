@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "name": "Hero for Test",
+    "life": 400,
+    "atk": 30,
+    "item": [
+      -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+      -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+      -1, -1, -1, -1
+    ],
+    "achieve": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "turn": 0,
+    "money": 200,
+    "max_life": 400,
+    "battle_card": 5
+  }
+]
