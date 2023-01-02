@@ -6,10 +6,11 @@ const EventSchema = Schema(
   {
     id: { type: Number, required: true },
     name: { type: String, required: true },
-    description: [{ type: String }],
+    description: { type: String },
     options: [{ type: String }],
     item_get: [{ type: Number }],
     buff_value: [{ type: Number }],
+    img: { type: String },
   },
   {
     collection: 'event',

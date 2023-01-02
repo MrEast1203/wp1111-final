@@ -2,204 +2,226 @@
   {
     "id": 0,
     "name": "First Boss",
-    "description": ["xxx來了, 勇者快打敗他！"],
+    "description": "xxx來了, 勇者快打敗他！",
     "options": ["Ok", "打不蠃啦"],
     "item_get": [16, 37],
-    "buff_value": [0, 0]
+    "buff_value": [0, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 1,
     "name": "國家任務",
-    "description": [
-      "國家終於有任務給你啦",
-      "為了國家, 更為了世界, 你要收集A,B,C去對抗魔王"
-    ],
+    "description": "國家終於有任務給你啦\n為了國家, 更為了世界, 你要收集A,B,C去對抗魔王",
     "options": ["好"],
     "item_get": [-1],
-    "buff_value": [0]
+    "buff_value": [0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 2,
     "name": "Second Boss",
-    "description": ["勇者A夢救命!"],
+    "description": "勇者A夢救命!",
     "options": ["我來了", "打不蠃啦"],
     "item_get": [17, 38],
-    "buff_value": [0, 0]
+    "buff_value": [0, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 3,
     "name": "高端",
-    "description": ["你在寶箱裏發現了高端疫苗，要打嗎？"],
+    "description": "你在寶箱裏發現了高端疫苗，要打嗎？",
     "options": ["打", " 不打"],
     "item_get": [15, -1],
-    "buff_value": [0, 0]
+    "buff_value": [0, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 4,
     "name": "Dog",
-    "description": ["有一隻柴犬在問你", "你是不是想色色？"],
+    "description": "有一隻柴犬在問你\n你是不是想色色？",
     "options": ["想", " 不想"],
     "item_get": [14, 13],
-    "buff_value": [0, 0]
+    "buff_value": [0, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 5,
     "name": "壺",
-    "description": ["在寶箱發現了個壺", "你超級超級想要！"],
+    "description": "在寶箱發現了個壺,你超級超級想要！",
     "options": ["拿"],
     "item_get": [12],
-    "buff_value": [-10]
+    "buff_value": [-10],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 6,
     "name": "劍",
-    "description": ["插在石上"],
+    "description": "插在石上",
     "options": ["拿", "不拿"],
     "item_get": [19, -1],
-    "buff_value": [-0.7]
+    "buff_value": [-0.7],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 6,
     "name": "盾",
-    "description": ["被惡魔守護著"],
+    "description": "被惡魔守護著",
     "options": ["趕走它們", "不拿"],
     "item_get": [20, -1],
-    "buff_value": [36]
+    "buff_value": [36],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 7,
     "name": "見到神獸",
-    "description": ["想要誰的加護"],
+    "description": "想要誰的加護",
     "options": ["朱雀", "玄武", "白虎", "青龍"],
     "item_get": [22, 23, 24, 25],
-    "buff_value": [0, 0, 0, 0]
+    "buff_value": [0, 0, 0, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 8,
     "name": "掉落陷阱",
-    "description": ["呀！！！！！！"],
+    "description": "呀！！！！！！",
     "options": ["痛", "痛"],
     "item_get": [-1, 38],
-    "buff_value": [-50, 0]
+    "buff_value": [-50, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 9,
     "name": "遇見怪物了",
-    "description": ["哭"],
+    "description": "哭",
     "options": ["打", "逃"],
     "item_get": [40, 36],
-    "buff_value": [0, 0]
+    "buff_value": [0, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 10,
     "name": "遇見精英怪物了",
-    "description": ["哭呀"],
+    "description": "哭呀",
     "options": ["打", "逃"],
     "item_get": [41, 39],
-    "buff_value": [0, 0]
+    "buff_value": [0, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 11,
     "name": "遇見其怪的老人了",
-    "description": ["他要你給他點錢"],
+    "description": "他要你給他點錢",
     "options": ["給", "不"],
     "item_get": [-42, 37],
-    "buff_value": [-50, 0]
+    "buff_value": [-50, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 12,
     "name": "遇到shark要講什麼?",
-    "description": ["A: Guh!, B: A, C: Wah, D: sharkkkk!"],
+    "description": "A: Guh!, B: A, C: Wah, D: sharkkkk!",
     "options": ["A", "B", "C", "D"],
     "item_get": [-1, 30, -1, -1],
-    "buff_value": [-15, 0, -25, -10]
+    "buff_value": [-15, 0, -25, -10],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 12,
     "name": "要入教嗎?",
-    "description": ["要入教嗎?"],
+    "description": "要入教嗎?",
     "options": ["yes", "no"],
     "item_get": [31, -1],
-    "buff_value": [-30, 0]
+    "buff_value": [-30, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 13,
     "name": "偵探",
-    "description": ["Coffee or Tea?"],
+    "description": "Coffee or Tea?",
     "options": ["Coffee", "Tea"],
     "item_get": [1, 32],
-    "buff_value": [4, 0]
+    "buff_value": [4, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 14,
     "name": "不死鳥",
-    "description": ["要買嗎？"],
+    "description": "要買嗎？",
     "options": ["yes", "no"],
     "item_get": [-33, -1],
-    "buff_value": [-100, 0]
+    "buff_value": [-100, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 15,
     "name": "死神",
-    "description": ["Peace"],
+    "description": "Peace",
     "options": ["Peace"],
     "item_get": [-1],
-    "buff_value": [0]
+    "buff_value": [0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 16,
     "name": "final boss",
-    "description": ["fight boss"],
+    "description": "fight boss",
     "options": ["yes"],
     "item_get": [-1],
-    "buff_value": [0]
+    "buff_value": [0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 17,
     "name": "好人",
-    "description": ["你要什麼藥水？"],
+    "description": "你要什麼藥水？",
     "options": ["Heal", "Attack", "Strength"],
     "item_get": [0, 3, 6],
-    "buff_value": [1, 4, 7]
+    "buff_value": [1, 4, 7],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 18,
     "name": "發現黃金",
-    "description": ["要消耗體力取黃金嗎？"],
+    "description": "要消耗體力取黃金嗎？",
     "options": ["取", "不"],
     "item_get": [35, -1],
-    "buff_value": [-40, 0]
+    "buff_value": [-40, 0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 996,
     "name": "fail",
-    "description": ["Fail"],
+    "description": "Fail",
     "options": ["restart"],
     "item_get": [-1],
-    "buff_value": [0]
+    "buff_value": [0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 997,
     "name": "Ending C",
-    "description": ["Win, but death rate>=60%"],
+    "description": "Win, but death rate>=65%",
     "options": ["restart"],
     "item_get": [-1],
-    "buff_value": [0]
+    "buff_value": [0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 998,
     "name": "Ending B",
-    "description": ["Win"],
+    "description": "Win",
     "options": ["Yeah"],
     "item_get": [-1],
-    "buff_value": [0]
+    "buff_value": [0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   },
   {
     "id": 999,
     "name": "Ending A",
-    "description": ["收集到9,10,11,並打敗final boss"],
+    "description": "收集到9,10,11,並打敗final boss",
     "options": ["回去"],
     "item_get": [-1],
-    "buff_value": [0]
+    "buff_value": [0],
+    "img": "https://i.imgur.com/71vNzDp.png"
   }
 ]
