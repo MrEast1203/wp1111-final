@@ -1,0 +1,3 @@
+getMonster = () => {};
+
+export default monsterFunc;

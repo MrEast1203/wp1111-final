@@ -10,7 +10,6 @@ exports.GetHero = async (req, res) => {
 
 exports.CreateHero = async (req, res) => {
   const body = req.body;
-  S
   const hero = new Hero(body);
   try {
     await hero.save();

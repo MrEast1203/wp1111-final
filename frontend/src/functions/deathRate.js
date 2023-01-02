@@ -1,0 +1,3 @@
+getDeathRate = () => {};
+
+export default deathRateFunc;

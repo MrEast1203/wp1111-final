@@ -1,0 +1,3 @@
+getCard = () => {};
+
+export default battleCardFunc;

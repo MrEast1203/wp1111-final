@@ -1,0 +1,3 @@
+getBuff = () => {};
+
+export default buffFunc;

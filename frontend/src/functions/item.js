@@ -1,0 +1,3 @@
+getItem = () => {};
+
+export default ItemFunc;

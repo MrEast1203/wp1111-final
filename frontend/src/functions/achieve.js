@@ -1,0 +1,3 @@
+getAchieve = () => {};
+
+export default achieveFunc;

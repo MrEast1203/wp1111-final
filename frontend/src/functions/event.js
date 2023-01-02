@@ -1,0 +1,3 @@
+getEvent = () => {};
+
+export default eventFunc;
