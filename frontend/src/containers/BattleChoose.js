@@ -74,10 +74,14 @@ const BattleChoose = ({ character }) => {
         <Modal
           messageTitle="休息"
           messageContent="休息一回合，回復 20% 生命。"
+          time={null}
           setModal={() => {
             setBattleType("");
             setBattleChoose(false);
           }}
+          setTime={null}
+          setDay={null}
+          setBuild={null}
         />
       ) : (
         <></>

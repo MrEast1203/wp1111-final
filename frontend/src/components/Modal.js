@@ -48,6 +48,11 @@ const ModalCard = styled.div`
 
 const handleOperation = (time, setModal, setTime, setDay, setBuild) => {
   //console.log("setBuild", setBuild);
+  if (time === null) {
+    setModal();
+    return;
+  }
+
   let checkTrain = false;
   if (setBuild === "rest") {
     console.log("rest");
