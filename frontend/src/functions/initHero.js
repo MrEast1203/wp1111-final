@@ -7,9 +7,12 @@ const initHero = async (
   setMax_hp,
   setMoney,
   setItemsForDB,
-  setAchieveForDB
+  setAchieveForDB,
+  loginState
 ) => {
-  const data = await getHero(id);
+  let data;
+  if (loginState === "continue") data = await getHero(id);
+  else data = await getHero("-1");
   //   console.log("hi", data[0]);
   setEnergy(data[0].battle_card);
   setAtk(data[0].atk);

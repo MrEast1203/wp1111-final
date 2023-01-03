@@ -38,7 +38,7 @@ const ItemsWrpper = styled.div`
   margin: 0.5rem 0;
 `;
 
-const Main = () => {
+const Main = ({ name, loginState, id }) => {
   const [isShop, setIsShop] = useState(false);
   const [isBattle, setIsBattle] = useState(false);
   const [isBuild, setIsBuild] = useState(false);
@@ -46,7 +46,7 @@ const Main = () => {
   const [isRest, setIsRest] = useState(false);
 
   //////////////玩家Data//////////////////////
-  const name = "";
+  const playerName = "";
   const [energy, setEnergy] = useState(5);
   const [atk, setAtk] = useState(30);
   const [hp, setHp] = useState(400);
@@ -78,7 +78,7 @@ const Main = () => {
 
   ////////////// 回合用 /////////////////////////
   // const [turn, setTurn] = useState(0);
-  const [day, setDay] = useState(0);
+  const [day, setDay] = useState(1);
   const [time, setTime] = useState(0);
   const [build, setBuild] = useState(0);
   const [trained, setTrained] = useState(false);
@@ -92,14 +92,15 @@ const Main = () => {
   useEffect(() => {
     console.log("init hero");
     initHero(
-      "0",
+      name,
       setEnergy,
       setAtk,
       setHp,
       setMax_hp,
       setMoney,
       setItemsForDB,
-      setAchieveForDB
+      setAchieveForDB,
+      loginState
     )
       .then((data) => {
         // console.log(data[0]);
@@ -112,7 +113,12 @@ const Main = () => {
         }
       })
       .catch((err) => {
-        if (err) createHero(3, "fdsaf");
+        if (err) {
+          console.log("createHero");
+          console.log("id", id);
+          console.log("name", name);
+          createHero(id, name);
+        }
       });
   }, []);
   useEffect(() => {
@@ -162,7 +168,7 @@ const Main = () => {
   ];
   //  getItem(3);
   const character = {
-    name: name,
+    name: playerName,
     energy: energy,
     atk: atk,
     hp: hp,

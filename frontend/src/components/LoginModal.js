@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "./Button";
 import Modal from "./Modal";
+import getHero from "../functions/hero/getHero";
 
 const LoginModalWrapper = styled.div`
   position: absolute;
@@ -45,18 +46,40 @@ const LoginModalCard = styled.div`
   }
 `;
 
-const LoginModal = ({ loginState, setIsLogin, setloginState }) => {
+const LoginModal = ({
+  loginState,
+  setIsLogin,
+  setloginState,
+  setName,
+  id,
+  checkExists,
+  setCheckExists,
+}) => {
   const [info, setInfo] = useState("");
   const [confirmed, setConfirmed] = useState(false);
-
+  let message;
+  if (loginState === "new") {
+    message = checkExists
+      ? `歡迎！ ${info}\n ${id}`
+      : `I will create one for you\n${id}`;
+  } else if (checkExists === false) {
+    // setName("無名英雄");
+    setloginState("new");
+    // message = `I will create one for you\n${id}`;
+  } else {
+    message = `歡迎回來！ `;
+  }
   return (
     <LoginModalWrapper>
       {confirmed ? (
         <Modal
           messageTitle="提示"
-          messageContent={`歡迎！ ${info}`}
+          messageContent={message}
           time={null}
-          setModal={() => setIsLogin(true)}
+          setModal={() => {
+            setIsLogin(true);
+            setName(info);
+          }}
           setTime={null}
           setDay={null}
           setBuild={null}
@@ -64,11 +87,20 @@ const LoginModal = ({ loginState, setIsLogin, setloginState }) => {
       ) : (
         <LoginModalCard>
           <h2>請輸入您的{loginState === "new" ? "英雄名稱" : "ID"}</h2>
-          <input value={info} onChange={(e) => setInfo(e.target.value)} />
+          <input
+            value={info}
+            onChange={(e) => {
+              setInfo(e.target.value);
+              // setName(e.target.value);
+            }}
+          />
           <Button
             content="確定"
             operation={() => {
-              if (!info) return;
+              if (!info) {
+                // setCheckExists(true);
+                return;
+              }
               setConfirmed(true);
             }}
           />

@@ -18,9 +18,15 @@ const LoginWrapper = styled.div`
   }
 `;
 
-const Login = ({ setIsLogin }) => {
-  const [loginState, setloginState] = useState("");
-
+const Login = ({
+  setIsLogin,
+  loginState,
+  setloginState,
+  setName,
+  id,
+  checkExists,
+  setCheckExists,
+}) => {
   const LoginButtons = [
     { name: "新遊戲", operation: () => setloginState("new") },
     { name: "繼續", operation: () => setloginState("continue") },
@@ -37,6 +43,10 @@ const Login = ({ setIsLogin }) => {
           loginState={loginState}
           setIsLogin={setIsLogin}
           setloginState={setloginState}
+          setName={setName}
+          id={id}
+          checkExists={checkExists}
+          setCheckExists={setCheckExists}
         />
       ) : (
         <></>
