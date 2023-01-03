@@ -196,10 +196,10 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   useEffect(() => {
     // setGameOver(false);
     if (trained === true) {
-      setHp((prev) => prev + 100);
-      setMax_hp((prev) => prev + 100);
-      setAtk((prev) => prev + 30);
-      setEnergy((prev) => prev + 1);
+      // setHp((prev) => prev + 100);
+      // setMax_hp((prev) => prev + 100);
+      // setAtk((prev) => prev + 30);
+      setEnergy((prev) => prev + 3);
     }
   }, [trained]);
   useEffect(() => {
@@ -239,6 +239,10 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
       { name: "Item5", content: "Content5" },
       { name: "Item6", content: "Content6" },
     ],
+    setAttack: setAtk,
+    setHealth: setHp,
+    setMaxHealth: setMax_hp,
+    setBattleCard: setEnergy,
   };
 
   return isBattle ? (

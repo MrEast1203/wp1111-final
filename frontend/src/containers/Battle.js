@@ -73,8 +73,29 @@ const Battle = ({ character, battleType }) => {
   const [atk, setAtk] = useState(0);
   const [hp, setHp] = useState(0);
   const [atkImg, setAtkImg] = useState("");
+  const [damageToMonster, setDamageToMonster] = useState(0);
+  useEffect(() => {
+    if (damageToMonster !== 0) {
+      console.log("damageToMonster", damageToMonster);
+      setHp(
+        (prev) =>
+          prev - Math.floor((character.atk * damageToMonster * 1.75) / 100)
+      );
+      character.setHealth(
+        (prev) => prev - Math.floor(atk * (1 + Math.random()))
+      );
+      if (hp <= 0 || character.hp <= 0) {
+        character.setAttack((prev) => prev + 10);
+        character.setHealth((prev) => prev + 30);
+        character.setMaxHealth((prev) => prev + 30);
+        character.setBattleCard((prev) => prev - 1);
+        // return to Main.js
+      }
+      handleBattleBar();
+    }
+  }, [damageToMonster]);
 
-  console.log(character);
+  //console.log(character);
   const enemy = {
     name: name,
     atk: atk,
@@ -93,6 +114,7 @@ const Battle = ({ character, battleType }) => {
     let id = setInterval(showProgress, 10);
     const spacePress = (e) => {
       if (e.code === "Space") {
+        setDamageToMonster(width);
         clearInterval(id);
         id = -1;
         width = 0;
