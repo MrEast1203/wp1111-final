@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import DeathRate from "../components/DeathRate";
 import CharacterMain from "../components/CharacterMain";
@@ -9,7 +9,6 @@ import Achievement from "../components/Achievement";
 import Shop from "./Shop";
 import Modal from "../components/Modal";
 import BattleChoose from "./BattleChoose";
-import getDeathRate from "../functions/deathRate";
 
 const MainWrapper = styled.div`
   height: 100vh;
@@ -42,39 +41,9 @@ const Main = () => {
   const [IsTrain, setIsTrain] = useState(false);
   const [isRest, setIsRest] = useState(false);
 
-  ////////////// 回合用 /////////////////////////
-  const [turn, setTurn] = useState(0);
-  const [day, setDay] = useState(0);
-  const [time, setTime] = useState(0);
-  const [build, setBuild] = useState(0);
-  const [trained, setTrained] = useState(false);
-  const [deathRate, setDeathRate] = useState(0);
-  const dayparts = ["早上", "下午", "晚上"];
-  // console.log("day", day);
-  // console.log("time", time);
-  useEffect(() => {
-    // console.log(day);
-    if (day === 0) {
-      console.log("init hero");
-      setDay(1);
-    } else {
-      console.log("update hero");
-      setDeathRate(getDeathRate(deathRate, build));
-      setBuild(0);
-      setTrained(false);
-    }
-  }, [day]);
-  /////////////////////////////////////////////
-
   const MainButtons = [
     { name: "戰鬥", operation: () => setIsBattle(true) },
-    {
-      name: "訓練",
-      operation: () => {
-        if (time <= 1) setIsTrain(true);
-        setTrained(true);
-      },
-    },
+    { name: "訓練", operation: () => setIsTrain(true) },
     { name: "建築", operation: () => setIsBuild(true) },
     { name: "商店", operation: () => setIsShop(true) },
     { name: "休息", operation: () => setIsRest(true) },
@@ -85,6 +54,7 @@ const Main = () => {
     energy: 10,
     atk: 10,
     hp: 10,
+    max_hp: 20,
     money: 1500,
     items: [
       { name: "Item1", content: "Content1\n售出：$100" },
@@ -97,7 +67,7 @@ const Main = () => {
   };
 
   return isBattle ? (
-    <BattleChoose character={character} />
+    <BattleChoose character={character} setIsRest={setIsRest} />
   ) : isShop ? (
     <Shop
       money={character.money}
@@ -107,7 +77,7 @@ const Main = () => {
   ) : (
     <MainWrapper>
       <BlockWrapper>
-        <Period timePeriod={dayparts[time]} days={day} />
+        <Period timePeriod="下午" days="17" />
         <ItemsWrpper>
           <Items items={character.items} />
         </ItemsWrpper>
@@ -119,23 +89,20 @@ const Main = () => {
           atk={character.atk}
           def={character.def}
           hp={character.hp}
+          max_hp={character.max_hp}
           money={character.money}
         />
         <ButtonList items={MainButtons} />
       </BlockWrapper>
       <BlockWrapper>
-        <DeathRate deathRate={deathRate} />
+        <DeathRate deathRate={30} />
         <Achievement />
       </BlockWrapper>
       {isBuild ? (
         <Modal
           messageTitle="建築"
           messageContent="成功建造防禦工事！"
-          time={time}
-          setModal={setIsBuild}
-          setTime={setTime}
-          setDay={setDay}
-          setBuild={setBuild}
+          setModal={() => setIsBuild(false)}
         />
       ) : (
         <></>
@@ -144,21 +111,13 @@ const Main = () => {
         <Modal
           messageTitle="訓練"
           messageContent="訓練成功！"
-          time={time}
-          setModal={setIsTrain}
-          setTime={setTime}
-          setDay={setDay}
-          setBuild={"train"}
+          setModal={() => setIsTrain(false)}
         />
       ) : isRest ? (
         <Modal
           messageTitle="休息"
           messageContent="休息一回合，回復 20% 生命。"
-          time={time}
-          setModal={setIsRest}
-          setTime={setTime}
-          setDay={setDay}
-          setBuild={"rest"}
+          setModal={() => setIsRest(false)}
         />
       ) : (
         <></>

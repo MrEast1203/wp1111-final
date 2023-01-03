@@ -4,7 +4,8 @@ import getCard from "../functions/battle_card";
 import styled from "styled-components";
 import Items from "../components/Items";
 import BattleCard from "../components/BattleCard";
-import Battle from "./Battle";
+import BattleType from "./BattleType";
+import Modal from "../components/Modal";
 
 const BattleChooseWrapper = styled.div`
   background: linear-gradient(to right, #261326, #c94f44);
@@ -44,8 +45,8 @@ const BattleChoose = ({ character }) => {
     Rest: "休息",
   };
 
-  return battleChoose ? (
-    <Battle battleType={battleType} character={character} />
+  return battleChoose && battleType !== "休息" ? (
+    <BattleType battleType={battleType} character={character} />
   ) : (
     <BattleChooseWrapper>
       <ItemsWrpper>
@@ -69,6 +70,18 @@ const BattleChoose = ({ character }) => {
           setBattleType={setBattleType}
         />
       </BattleCardsRegion>
+      {battleType === "休息" ? (
+        <Modal
+          messageTitle="休息"
+          messageContent="休息一回合，回復 20% 生命。"
+          setModal={() => {
+            setBattleType("");
+            setBattleChoose(false);
+          }}
+        />
+      ) : (
+        <></>
+      )}
     </BattleChooseWrapper>
   );
 };

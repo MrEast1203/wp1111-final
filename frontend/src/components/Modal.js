@@ -45,46 +45,14 @@ const ModalCard = styled.div`
     right: 2rem;
   }
 `;
-const handleOperation = (time, setModal, setTime, setDay, setBuild) => {
-  //console.log("setBuild", setBuild);
-  let checkTrain = false;
-  if (setBuild === "rest") {
-    console.log("rest");
-  } else if (setBuild === "train") {
-    console.log("train");
-    if (time === 1) checkTrain = true;
-    else setTime((prev) => prev + 1);
-  } else {
-    setBuild((prev) => prev + 1);
-  }
-  let check = false;
-  if (time === 2 || checkTrain) {
-    setTime(0);
-    check = true;
-  } else setTime((prev) => prev + 1);
-  if (check) setDay((day) => day + 1);
-  setModal(false);
-};
-const Modal = ({
-  messageTitle,
-  messageContent,
-  time,
-  setModal,
-  setTime,
-  setDay,
-  setBuild,
-}) => {
+
+const Modal = ({ messageTitle, messageContent, setModal }) => {
   return (
     <ModalWrapper>
       <ModalCard>
         <h2>{messageTitle}</h2>
         <p>{messageContent}</p>
-        <Button
-          content="好的"
-          operation={() =>
-            handleOperation(time, setModal, setTime, setDay, setBuild)
-          }
-        />
+        <Button content="好的" operation={setModal} />
       </ModalCard>
     </ModalWrapper>
   );

@@ -43,7 +43,7 @@ const CharacterInfo = styled.ul`
   }
 `;
 
-const CharacterMain = ({ name, energy, atk, def, hp, money }) => {
+const CharacterMain = ({ name, energy, atk, hp, max_hp, money }) => {
   return (
     <CharacterWrapper>
       <div>
@@ -59,7 +59,7 @@ const CharacterMain = ({ name, energy, atk, def, hp, money }) => {
           <TbSwords style={{ marginRight: "0.5rem" }} /> {atk}
         </li>
         <li className="hp">
-          <FiHeart style={{ marginRight: "0.5rem" }} /> {hp}
+          <FiHeart style={{ marginRight: "0.5rem" }} /> {hp}/{max_hp}
         </li>
       </CharacterInfo>
     </CharacterWrapper>
