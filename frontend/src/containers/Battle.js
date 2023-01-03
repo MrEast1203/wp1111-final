@@ -89,6 +89,10 @@ const Battle = ({ character, battleType }) => {
         character.setHealth((prev) => prev + 30);
         character.setMaxHealth((prev) => prev + 30);
         character.setBattleCard((prev) => prev - 1);
+        if (character.time === 2) {
+          character.setTime(0);
+          character.setDay((day) => day + 1);
+        } else character.setTime((prev) => prev + 1);
         // return to Main.js
       }
       handleBattleBar();

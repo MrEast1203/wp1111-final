@@ -211,12 +211,19 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   }, [isRest]);
 
   const MainButtons = [
-    { name: "戰鬥", operation: () => setIsBattle(true) },
+    {
+      name: "戰鬥",
+      operation: () => {
+        if (energy > 0) setIsBattle(true);
+      },
+    },
     {
       name: "訓練",
       operation: () => {
-        if (time <= 1) setIsTrain(true);
-        setTrained(true);
+        if (time <= 1) {
+          setIsTrain(true);
+          setTrained(true);
+        }
       },
     },
     { name: "建築", operation: () => setIsBuild(true) },
@@ -243,6 +250,9 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
     setHealth: setHp,
     setMaxHealth: setMax_hp,
     setBattleCard: setEnergy,
+    time: time,
+    setTime: setTime,
+    setDay: setDay,
   };
 
   return isBattle ? (
