@@ -94,39 +94,31 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   // console.log("day", day);
   // console.log("time", time);
   const count = useRef(false);
-  const count2 = useRef(false);
+  const count2 = useRef(true);
   let checkNewGame = true;
   useEffect(() => {
     console.log("init hero");
-    initHero(
-      name,
-      setEnergy,
-      setAtk,
-      setHp,
-      setMax_hp,
-      setMoney,
-      setItemsForDB,
-      setAchieveForDB,
-      loginState
-    )
-      .then((data) => {
-        // console.log(data[0]);
-        if (data[0].turn > 0) {
-          checkNewGame = false;
-          setDay(data[0].turn);
-          setDeathRate(data[0].deathRate);
-          // setAchieveForDB(data[0].achieve);
-          // setItemsForDB(data[0].item);
-        }
-      })
-      .catch((err) => {
-        if (err) {
-          console.log("createHero");
-          console.log("id", id);
-          console.log("name", name);
-          createHero(id, name);
-        }
-      });
+    if (loginState === "continue") {
+      initHero(
+        name,
+        setEnergy,
+        setAtk,
+        setHp,
+        setMax_hp,
+        setMoney,
+        setItemsForDB,
+        setAchieveForDB,
+        loginState,
+        setPlayerName,
+        setDay,
+        setDeathRate
+      );
+    } else {
+      console.log("createHero");
+      console.log("id", id);
+      console.log("name", name);
+      createHero(id, name);
+    }
   }, []);
   useEffect(() => {
     // console.log(count.current);
@@ -190,20 +182,19 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
         0
       );
       console.log("event GG");
-      setIsLogin(false);
+      // setIsLogin(false);
     }
   }, [gameOver]);
   useEffect(() => {
-    // setGameOver(false);
     if (trained === true) {
-      // setHp((prev) => prev + 100);
+      setHp((prev) => prev - 100);
       // setMax_hp((prev) => prev + 100);
       // setAtk((prev) => prev + 30);
       setEnergy((prev) => prev + 3);
+      setTrained(false);
     }
   }, [trained]);
   useEffect(() => {
-    // setGameOver(false);
     if (isRest === true) {
       let newHp = Math.floor(Math.min(max_hp, hp * 1.2));
       setHp(newHp);
@@ -265,6 +256,13 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
     />
   ) : isEvent ? (
     <Event />
+  ) : gameOver ? (
+    <Modal
+      messageTitle="GameOver"
+      messageContent="You Lose"
+      time={"gg"}
+      setModal={setIsLogin}
+    />
   ) : (
     <MainWrapper>
       <BlockWrapper>

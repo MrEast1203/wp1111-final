@@ -1,8 +1,6 @@
 import instance from "../../api";
 const createHero = (ids, heroName) => {
-  const {
-    data: { message, contents },
-  } = instance.post("/createHero", {
+  instance.post("/createHero", {
     id: ids,
     name: heroName,
     life: 400,
@@ -33,8 +31,8 @@ const createHero = (ids, heroName) => {
     battle_card: 5,
     deathRate: 0,
   });
-  console.log("createHero", contents);
+  // console.log("createHero", contents);
 
-  return contents;
+  // return contents;
 };
 export default createHero;

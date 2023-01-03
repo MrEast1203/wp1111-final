@@ -9,12 +9,18 @@ const initHero = async (
   setItemsForDB,
   setAchieveForDB,
   loginState,
-  setPlayerName
+  setPlayerName,
+  setDay,
+  setDeathRate
 ) => {
-  let data;
-  if (loginState === "continue") data = await getHero(id);
-  else data = await getHero("-1fsafgsg");
-  //   console.log("hi", data[0]);
+  const data = await getHero(id);
+  // console.log("id", id);
+  // console.log("loginstate", loginState);
+  // if (loginState === "continue") {
+  //   data = await getHero(id);
+  //   // console.log("here");
+  // } else data = await getHero("-1fsafgsg");
+  // console.log("hi", data[0]);
   setPlayerName(data[0].name);
   setEnergy(data[0].battle_card);
   setAtk(data[0].atk);
@@ -23,6 +29,8 @@ const initHero = async (
   setMoney(data[0].money);
   setItemsForDB(data[0].item);
   setAchieveForDB(data[0].achieve);
+  setDay(data[0].turn);
+  setDeathRate(data[0].deathRate);
   return data;
 };
 

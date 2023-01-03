@@ -48,6 +48,10 @@ const ModalCard = styled.div`
 
 const handleOperation = (time, setModal, setTime, setDay, setBuild) => {
   //console.log("setBuild", setBuild);
+  if (time === "gg") {
+    setModal(false);
+    return;
+  }
   if (time === null) {
     setModal();
     return;
