@@ -6,7 +6,17 @@ const theHero= axios.create({
 })
 const { state } = useLocation();
 getHero = () => {
-    const newHero=theHero.get('/getHero',)
+    const newHero=theHero.get('/getHero',{params:{
+        name: state.name,
+        life: state.life,
+        atk: state.atk,
+        item: state.item,
+        achieve:state.achieve,
+        turn: state.turn,
+        money: state.money,
+        max_life: state.max_life,
+        battle_card: state.battle_card,
+    }})
     return newHero;
 };
 createHero = () => {
