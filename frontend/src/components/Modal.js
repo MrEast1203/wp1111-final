@@ -52,7 +52,7 @@ const Modal = ({ messageTitle, messageContent, setModal }) => {
       <ModalCard>
         <h2>{messageTitle}</h2>
         <p>{messageContent}</p>
-        <Button content="好的" operation={() => setModal(false)} />
+        <Button content="好的" operation={setModal} />
       </ModalCard>
     </ModalWrapper>
   );

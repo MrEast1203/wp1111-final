@@ -54,6 +54,7 @@ const Main = () => {
     energy: 10,
     atk: 10,
     hp: 10,
+    max_hp: 20,
     money: 1500,
     items: [
       { name: "Item1", content: "Content1\n售出：$100" },
@@ -66,7 +67,7 @@ const Main = () => {
   };
 
   return isBattle ? (
-    <BattleChoose character={character} />
+    <BattleChoose character={character} setIsRest={setIsRest} />
   ) : isShop ? (
     <Shop
       money={character.money}
@@ -88,6 +89,7 @@ const Main = () => {
           atk={character.atk}
           def={character.def}
           hp={character.hp}
+          max_hp={character.max_hp}
           money={character.money}
         />
         <ButtonList items={MainButtons} />
@@ -100,7 +102,7 @@ const Main = () => {
         <Modal
           messageTitle="建築"
           messageContent="成功建造防禦工事！"
-          setModal={setIsBuild}
+          setModal={() => setIsBuild(false)}
         />
       ) : (
         <></>
@@ -109,13 +111,13 @@ const Main = () => {
         <Modal
           messageTitle="訓練"
           messageContent="訓練成功！"
-          setModal={setIsTrain}
+          setModal={() => setIsTrain(false)}
         />
       ) : isRest ? (
         <Modal
           messageTitle="休息"
           messageContent="休息一回合，回復 20% 生命。"
-          setModal={setIsRest}
+          setModal={() => setIsRest(false)}
         />
       ) : (
         <></>
