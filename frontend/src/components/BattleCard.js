@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import getBattleCards from "../functions/battle_card"
 
 const BattleCardButton = styled.div`
   width: 15rem;
