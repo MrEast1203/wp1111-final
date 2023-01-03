@@ -17,6 +17,7 @@ function main(app) {
   app.get('/api/getItem', wrap(itemRoute.GetItem));
   app.post('/api/createHero', wrap(heroRoute.CreateHero));
   app.post('/api/updateHero', wrap(heroRoute.UpdateHero));
+  
 }
 
 export default main;

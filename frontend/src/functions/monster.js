@@ -29,5 +29,5 @@ getMonster = async() => {
     }})
     return Monster;
 }
-    
+
 export default monsterFunc;
