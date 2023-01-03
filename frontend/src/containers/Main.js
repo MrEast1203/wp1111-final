@@ -13,6 +13,8 @@ import getDeathRate from "../functions/deathRate";
 import initHero from "../functions/initHero";
 import createHero from "../functions/hero/createHero";
 import updateHero from "../functions/hero/updateHero";
+import Event from "./Event";
+import getEvent from "../functions/event";
 
 const MainWrapper = styled.div`
   height: 100vh;
@@ -44,9 +46,10 @@ const Main = ({ name, loginState, id }) => {
   const [isBuild, setIsBuild] = useState(false);
   const [IsTrain, setIsTrain] = useState(false);
   const [isRest, setIsRest] = useState(false);
+  const [isEvent, setIsEvent] = useState(false);
 
   //////////////玩家Data//////////////////////
-  const playerName = "";
+  const playerName = name;
   const [energy, setEnergy] = useState(5);
   const [atk, setAtk] = useState(30);
   const [hp, setHp] = useState(400);
@@ -83,6 +86,7 @@ const Main = ({ name, loginState, id }) => {
   const [build, setBuild] = useState(0);
   const [trained, setTrained] = useState(false);
   const [deathRate, setDeathRate] = useState(0);
+  const [event, setEvent] = useState({});
   const dayparts = ["早上", "下午", "晚上"];
   // console.log("day", day);
   // console.log("time", time);
@@ -121,16 +125,27 @@ const Main = ({ name, loginState, id }) => {
         }
       });
   }, []);
-  useEffect(() => {
+  useEffect(async () => {
     // console.log(count.current);
     if (count.current && count2.current) {
       // console.log(day);
-
+      if (day === 3) {
+        console.log("出現event 1");
+        // getEvent(1, setEvent)
+        setIsEvent(true);
+        console.log("event", event);
+      }
+      if (day === 14) {
+        console.log("出現event 0");
+      }
+      if (day === 21) {
+        console.log("出現event 2");
+      }
       console.log("update hero");
       let newDeathRate = getDeathRate(deathRate, build);
       updateHero(
-        0,
-        "Hero for Test",
+        id,
+        name,
         hp,
         atk,
         itemsForDB,
@@ -192,6 +207,8 @@ const Main = ({ name, loginState, id }) => {
       items={character.items}
       setIsShop={() => setIsShop(false)}
     />
+  ) : isEvent ? (
+    <Event />
   ) : (
     <MainWrapper>
       <BlockWrapper>

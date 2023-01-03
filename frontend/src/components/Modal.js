@@ -55,9 +55,9 @@ const handleOperation = (time, setModal, setTime, setDay, setBuild) => {
 
   let checkTrain = false;
   if (setBuild === "rest") {
-    console.log("rest");
+    //console.log("rest");
   } else if (setBuild === "train") {
-    console.log("train");
+    //console.log("train");
     if (time === 1) checkTrain = true;
     else setTime((prev) => prev + 1);
   } else {

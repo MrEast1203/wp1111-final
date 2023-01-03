@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { TbSwords } from "react-icons/tb";
 import { FiHeart } from "react-icons/fi";
+import getMonster from "../functions/monster";
+import battleMonster from "../functions/battleMonster";
 
 const BattleWrapper = styled.div`
   height: 100vh;
@@ -67,10 +69,16 @@ const BattleBar = styled.div`
 `;
 
 const Battle = ({ character, battleType }) => {
+  const [name, setName] = useState("");
+  const [atk, setAtk] = useState(0);
+  const [hp, setHp] = useState(0);
+  const [atkImg, setAtkImg] = useState("");
+
+  console.log(character);
   const enemy = {
-    name: "怪物",
-    atk: 5,
-    hp: 20,
+    name: name,
+    atk: atk,
+    hp: hp,
   };
 
   const handleBattleBar = () => {
@@ -95,6 +103,13 @@ const Battle = ({ character, battleType }) => {
   };
 
   useEffect(() => {
+    battleMonster(
+      Math.floor(Math.random() * 4) + 3,
+      setName,
+      setAtk,
+      setHp,
+      setAtkImg
+    );
     handleBattleBar();
   }, []);
 
@@ -113,10 +128,10 @@ const Battle = ({ character, battleType }) => {
             {character.hp}
           </li>
         </ul>
-        <img src={require("../images/Hero-sample.png")} alt={character.name} />
+        <img src={"https://i.imgur.com/ugKc2G9.gif"} alt={character.name} />
       </BattleRegion>
       <BattleRegion className="enemy">
-        <img src={require("../images/monster.png")} alt={character.name} />
+        <img src={atkImg} alt={character.name} />
         <ul>
           <li>{enemy.name}</li>
           <li>
