@@ -10,6 +10,7 @@ import Shop from "./Shop";
 import Modal from "../components/Modal";
 import BattleChoose from "./BattleChoose";
 import getDeathRate from "../functions/deathRate";
+import getItem from "../functions/item"
 
 const MainWrapper = styled.div`
   height: 100vh;
@@ -79,8 +80,8 @@ const Main = () => {
     { name: "商店", operation: () => setIsShop(true) },
     { name: "休息", operation: () => setIsRest(true) },
   ];
-
-  const character = {
+   getItem(3);
+  const character = { 
     name: "無名英雄",
     energy: 10,
     atk: 10,
@@ -95,7 +96,7 @@ const Main = () => {
       { name: "Item6", content: "Content6" },
     ],
   };
-
+  
   return isBattle ? (
     <BattleChoose character={character} />
   ) : isShop ? (

@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { useState } from "react";
-import {   useLocation } from 'react-router-dom'
+import {   useLocation } from 'react-router-dom' // 
 const theHero= axios.create({
     baseURL: 'http://localhost:4000/api'
 })
 const { state } = useLocation();
-getHero = () => {
+getHero = (ids) => {
     const newHero=theHero.get('/getHero',{params:{
+        id:ids,
         name: state.name,
         life: state.life,
         atk: state.atk,
@@ -19,7 +20,7 @@ getHero = () => {
     }})
     return newHero;
 };
-createHero = () => {
+createHero = (ids) => {
     const aHero=  theHero.post('/createHero',{params:{
         name: state.name,
         life: state.life,
@@ -34,8 +35,9 @@ createHero = () => {
     }})
     return aHero
 };
-updateHero =async () => {
-    const HeroState=  await theHero.post('/updateHero',{params:{  life: state.life,
+updateHero =async (ids) => {
+    const HeroState=  await theHero.post('/updateHero',{params:{  
+        life: state.life,
         atk: state.atk,
         item: state.item,
         achieve:state.achieve,

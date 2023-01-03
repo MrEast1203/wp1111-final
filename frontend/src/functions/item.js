@@ -10,9 +10,9 @@ const { id } = useParams()
  const [buff_type,setBuff_type]=useState({})
  const [value,setValue]=useState(0)
  const [unique,setUnique]=useState(false)
-getItem = async () => {
+getItem = async (ids) => {
   const item= await items.get('/getItem',{
-    id: id,
+    id: ids,
     name: name,
     img: img,
     description: description,
