@@ -25,7 +25,15 @@ createHero = () => {
     return aHero
 };
 updateHero =async () => {
-    const HeroState=  await theHero.get('/updateHero',{params:{}})
+    const HeroState=  await theHero.get('/updateHero',{params:{  life: state.life,
+        atk: state.atk,
+        item: state.item,
+        achieve:state.achieve,
+        turn: state.turn,
+        money: state.money,
+        max_life: state.max_life,
+        battle_card: state.battle_card,
+}})
     return HeroState;
 };
 
