@@ -1,3 +1,9 @@
+function round(num) {
+  let m = Number((Math.abs(num) * 100).toPrecision(15));
+  return (Math.round(m) / 100) * Math.sign(num);
+}
+// from https://www.delftstack.com/zh-tw/howto/javascript/javascript-round-to-2-decimal-places/
+
 const getDeathRate = (deathRate, countBuild) => {
   let addValue = 0;
   let random = Math.random();
@@ -8,7 +14,7 @@ const getDeathRate = (deathRate, countBuild) => {
   } else {
     addValue = 6 + 3 * random - countBuild;
   }
-  return deathRate + addValue;
+  return round(deathRate + addValue);
 };
 
 export default getDeathRate;
