@@ -5,7 +5,7 @@ const theHero= axios.create({
     baseURL: 'http://localhost:4000/api'
 })
 const { state } = useLocation();
-getHero = (ids) => {
+const getHero = (ids) => {
     const newHero=theHero.get('/getHero',{params:{
         id:ids,
         name: state.name,
@@ -20,8 +20,13 @@ getHero = (ids) => {
     }})
     return newHero;
 };
-createHero = (ids) => {
+const createHero = (
+    ids,
+    heroName,
+    heroLifes,
+    heroAtk,) => {
     const aHero=  theHero.post('/createHero',{params:{
+        id:ids,
         name: state.name,
         life: state.life,
         atk: state.atk,
@@ -35,7 +40,7 @@ createHero = (ids) => {
     }})
     return aHero
 };
-updateHero =async (ids) => {
+const updateHero =async (ids) => {
     const HeroState=  await theHero.post('/updateHero',{params:{  
         life: state.life,
         atk: state.atk,
