@@ -60,7 +60,7 @@ const LoginModal = ({
   let message;
   if (loginState === "new") {
     message = checkExists
-      ? `歡迎！ ${info}\n ${id}`
+      ? ` Please Remember Your ID to Save Game\n${id}`
       : `I will create one for you\n${id}`;
   } else if (checkExists === false) {
     // setName("無名英雄");

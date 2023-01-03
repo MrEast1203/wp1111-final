@@ -7,7 +7,7 @@
     "img_takeHit": "https://i.imgur.com/qT5qZPP.gif",
     "img_dead": "https://i.imgur.com/f41YeLd.gif",
     "Life": 1000,
-    "Atk": 80,
+    "Atk": 60,
     "itemDrop": 16
   },
   {
@@ -18,7 +18,7 @@
     "img_takeHit": "https://i.imgur.com/NbOFVgG.gif",
     "img_dead": "https://i.imgur.com/EiWAZOt.gif",
     "Life": 2000,
-    "Atk": 60,
+    "Atk": 80,
     "itemDrop": 17
   },
   {
@@ -39,8 +39,8 @@
     "img_atk": "https://i.imgur.com/wT400XV.gif",
     "img_takeHit": "https://i.imgur.com/p72lJ25.gif",
     "img_dead": "https://i.imgur.com/HIAD2D5.gif",
-    "Life": 80,
-    "Atk": 10,
+    "Life": 100,
+    "Atk": 22,
     "itemDrop": 26
   },
   {
@@ -50,8 +50,8 @@
     "img_atk": "https://i.imgur.com/nJQlB8K.gif",
     "img_takeHit": "https://i.imgur.com/EbcD4T9.gif",
     "img_dead": "https://i.imgur.com/TpsbP68.gif",
-    "Life": 150,
-    "Atk": 8,
+    "Life": 250,
+    "Atk": 20,
     "itemDrop": 27
   },
   {
@@ -61,7 +61,7 @@
     "img_atk": "https://i.imgur.com/6GChU3L.gif",
     "img_takeHit": "https://i.imgur.com/xNfsXxz.gif",
     "img_dead": "https://i.imgur.com/HCGRmDG.gif",
-    "Life": 100,
+    "Life": 220,
     "Atk": 25,
     "itemDrop": 28
   },
@@ -73,7 +73,7 @@
     "img_takeHit": "https://i.imgur.com/LZ2cFvz.gif",
     "img_dead": "https://i.imgur.com/KvMIA12.gif",
     "Life": 500,
-    "Atk": 8,
+    "Atk": 18,
     "itemDrop": 29
   }
 ]
