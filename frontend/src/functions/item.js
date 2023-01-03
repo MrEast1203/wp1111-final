@@ -23,3 +23,16 @@
 // };
 
 // export default ItemFunc;
+import instance from "../api";
+const getItem = async (id) => {
+  const {
+    data: { message, contents },
+  } = await instance.get("/getItem", {
+    params: {
+      id: id,
+    },
+  });
+  return contents;
+};
+
+export default getItem;

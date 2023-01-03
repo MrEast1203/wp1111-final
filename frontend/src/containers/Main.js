@@ -13,8 +13,7 @@ import getDeathRate from "../functions/deathRate";
 import initHero from "../functions/initHero";
 import createHero from "../functions/hero/createHero";
 import updateHero from "../functions/hero/updateHero";
-import Event from "./Event";
-import getEvent from "../functions/event";
+import newEvent  from "../functions/event";
 
 const MainWrapper = styled.div`
   height: 100vh;
