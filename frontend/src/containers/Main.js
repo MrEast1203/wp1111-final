@@ -13,7 +13,8 @@ import getDeathRate from "../functions/deathRate";
 import initHero from "../functions/initHero";
 import createHero from "../functions/hero/createHero";
 import updateHero from "../functions/hero/updateHero";
-import newEvent  from "../functions/event";
+import newEvent from "../functions/event";
+import Event from "./Event";
 
 const MainWrapper = styled.div`
   height: 100vh;
@@ -48,7 +49,9 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   const [isEvent, setIsEvent] = useState(false);
 
   //////////////玩家Data//////////////////////
-  const playerName = name;
+  const [playerName, setPlayerName] = useState(
+    loginState === "new" ? name : ""
+  );
   const [energy, setEnergy] = useState(5);
   const [atk, setAtk] = useState(30);
   const [hp, setHp] = useState(400);
@@ -143,9 +146,10 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
       }
       console.log("update hero");
       let newDeathRate = getDeathRate(deathRate, build);
+      let ids = loginState === "new" ? id : name;
       updateHero(
-        id,
-        name,
+        ids,
+        playerName,
         hp,
         atk,
         itemsForDB,
@@ -171,9 +175,10 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   useEffect(() => {
     // setGameOver(false);
     if (gameOver === true) {
+      let ids = loginState === "new" ? id : name;
       updateHero(
-        id,
-        name,
+        ids,
+        playerName,
         400,
         30,
         itemsForDB,
@@ -191,7 +196,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   useEffect(() => {
     // setGameOver(false);
     if (trained === true) {
-      setHp((prev) => prev - 100);
+      setHp((prev) => prev + 100);
       setMax_hp((prev) => prev + 100);
       setAtk((prev) => prev + 30);
       setEnergy((prev) => prev + 1);

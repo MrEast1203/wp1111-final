@@ -8,12 +8,14 @@ const initHero = async (
   setMoney,
   setItemsForDB,
   setAchieveForDB,
-  loginState
+  loginState,
+  setPlayerName
 ) => {
   let data;
   if (loginState === "continue") data = await getHero(id);
-  else data = await getHero("-1");
+  else data = await getHero("-1fsafgsg");
   //   console.log("hi", data[0]);
+  setPlayerName(data[0].name);
   setEnergy(data[0].battle_card);
   setAtk(data[0].atk);
   setHp(data[0].life);
