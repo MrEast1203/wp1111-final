@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import DeathRate from "../components/DeathRate";
 import CharacterMain from "../components/CharacterMain";
@@ -11,6 +11,8 @@ import Modal from "../components/Modal";
 import BattleChoose from "./BattleChoose";
 import getDeathRate from "../functions/deathRate";
 import initHero from "../functions/initHero";
+import createHero from "../functions/hero/createHero";
+import updateHero from "../functions/hero/updateHero";
 
 const MainWrapper = styled.div`
   height: 100vh;
@@ -45,15 +47,33 @@ const Main = () => {
 
   //////////////玩家Data//////////////////////
   const name = "";
-  const [energy, setEnergy] = useState(0);
-  const [atk, setAtk] = useState(0);
-  const [hp, setHp] = useState(0);
-  const [max_hp, setMax_hp] = useState(0);
-  const [money, setMoney] = useState(0);
+  const [energy, setEnergy] = useState(5);
+  const [atk, setAtk] = useState(30);
+  const [hp, setHp] = useState(400);
+  const [max_hp, setMax_hp] = useState(400);
+  const [money, setMoney] = useState(200);
   const [items, setItems] = useState([]);
   const [achieve, setAchieve] = useState([]);
-  const [itemsForDB, setItemsForDB] = useState([]);
-  const [achieveForDB, setAchieveForDB] = useState([]);
+  const [itemsForDB, setItemsForDB] = useState([
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+    -1, -1,
+  ]);
+  const [achieveForDB, setAchieveForDB] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
   ///////////////////////////////////////////
 
   ////////////// 回合用 /////////////////////////
@@ -66,27 +86,63 @@ const Main = () => {
   const dayparts = ["早上", "下午", "晚上"];
   // console.log("day", day);
   // console.log("time", time);
+  const count = useRef(false);
+  const count2 = useRef(false);
+  let checkNewGame = true;
   useEffect(() => {
-    // console.log(day);
-    if (day === 0) {
-      console.log("init hero");
+    console.log("init hero");
+    initHero(
+      "0",
+      setEnergy,
+      setAtk,
+      setHp,
+      setMax_hp,
+      setMoney,
+      setItemsForDB,
+      setAchieveForDB
+    )
+      .then((data) => {
+        // console.log(data[0]);
+        if (data[0].turn > 0) {
+          checkNewGame = false;
+          setDay(data[0].turn);
+          setDeathRate(data[0].deathRate);
+          // setAchieveForDB(data[0].achieve);
+          // setItemsForDB(data[0].item);
+        }
+      })
+      .catch((err) => {
+        if (err) createHero(3, "fdsaf");
+      });
+  }, []);
+  useEffect(() => {
+    // console.log(count.current);
+    if (count.current && count2.current) {
+      // console.log(day);
 
-      initHero(
-        0,
-        setEnergy,
-        setAtk,
-        setHp,
-        setMax_hp,
-        setMoney,
-        setItemsForDB,
-        setAchieveForDB
-      );
-      setDay(1);
-    } else {
       console.log("update hero");
-      setDeathRate(getDeathRate(deathRate, build));
+      let newDeathRate = getDeathRate(deathRate, build);
+      updateHero(
+        0,
+        "Hero for Test",
+        hp,
+        atk,
+        itemsForDB,
+        achieveForDB,
+        day,
+        money,
+        max_hp,
+        energy,
+        newDeathRate
+      );
+      if (day > 1) setDeathRate(newDeathRate);
       setBuild(0);
       setTrained(false);
+    } else if (count.current === false) {
+      count.current = true;
+    } else {
+      count2.current = true;
+      // if (day === 0) setDay(1);
     }
   }, [day]);
   /////////////////////////////////////////////

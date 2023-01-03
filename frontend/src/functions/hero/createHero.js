@@ -27,7 +27,7 @@ const createHero = (ids, heroName) => {
       false,
       false,
     ],
-    turn: 0,
+    turn: 1,
     money: 200,
     max_life: 400,
     battle_card: 5,

@@ -1,6 +1,6 @@
 import instance from "../../api";
 const getHero = async (ids) => {
-  console.log("ids");
+  // console.log("ids");
   const {
     data: { message, contents },
   } = await instance.get("/getHero", {
@@ -8,7 +8,8 @@ const getHero = async (ids) => {
       id: ids,
     },
   });
-  console.log("getHero", contents);
+  // console.log("getHero", contents);
+  // contents=[] if not find
   return contents;
 };
 export default getHero;
