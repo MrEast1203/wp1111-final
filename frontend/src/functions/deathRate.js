@@ -7,9 +7,9 @@ function round(num) {
 const getDeathRate = (deathRate, countBuild) => {
   let addValue = 0;
   let random = Math.random();
-  if (deathRate < 35) {
+  if (deathRate < 30) {
     addValue = Math.max(0, 2 + 1 * random - countBuild);
-  } else if (deathRate < 65) {
+  } else if (deathRate < 60) {
     addValue = 4 + 2 * random - countBuild;
   } else {
     addValue = 6 + 3 * random - countBuild;

@@ -40,7 +40,7 @@ const ItemsWrpper = styled.div`
   margin: 0.5rem 0;
 `;
 
-const Main = ({ name, loginState, id }) => {
+const Main = ({ name, loginState, id, setIsLogin }) => {
   const [isShop, setIsShop] = useState(false);
   const [isBattle, setIsBattle] = useState(false);
   const [isBuild, setIsBuild] = useState(false);
@@ -88,6 +88,7 @@ const Main = ({ name, loginState, id }) => {
   const [deathRate, setDeathRate] = useState(0);
   const [event, setEvent] = useState({});
   const dayparts = ["早上", "下午", "晚上"];
+  const [gameOver, setGameOver] = useState(false);
   // console.log("day", day);
   // console.log("time", time);
   const count = useRef(false);
@@ -125,14 +126,14 @@ const Main = ({ name, loginState, id }) => {
         }
       });
   }, []);
-  useEffect(async () => {
+  useEffect(() => {
     // console.log(count.current);
     if (count.current && count2.current) {
       // console.log(day);
       if (day === 3) {
         console.log("出現event 1");
         // getEvent(1, setEvent)
-        setIsEvent(true);
+        // setIsEvent(true);
         console.log("event", event);
       }
       if (day === 14) {
@@ -157,6 +158,7 @@ const Main = ({ name, loginState, id }) => {
         newDeathRate
       );
       if (day > 1) setDeathRate(newDeathRate);
+      if (newDeathRate >= 100 || hp <= 0) setGameOver(true);
       setBuild(0);
       setTrained(false);
     } else if (count.current === false) {
@@ -167,6 +169,42 @@ const Main = ({ name, loginState, id }) => {
     }
   }, [day]);
   /////////////////////////////////////////////
+  useEffect(() => {
+    // setGameOver(false);
+    if (gameOver === true) {
+      updateHero(
+        id,
+        name,
+        400,
+        30,
+        itemsForDB,
+        achieveForDB,
+        1,
+        200,
+        400,
+        5,
+        0
+      );
+      console.log("event GG");
+      setIsLogin(false);
+    }
+  }, [gameOver]);
+  useEffect(() => {
+    // setGameOver(false);
+    if (trained === true) {
+      setHp((prev) => prev - 100);
+      setMax_hp((prev) => prev + 100);
+      setAtk((prev) => prev + 30);
+      setEnergy((prev) => prev + 1);
+    }
+  }, [trained]);
+  useEffect(() => {
+    // setGameOver(false);
+    if (isRest === true) {
+      let newHp = Math.floor(Math.min(max_hp, hp * 1.2));
+      setHp(newHp);
+    }
+  }, [isRest]);
 
   const MainButtons = [
     { name: "戰鬥", operation: () => setIsBattle(true) },

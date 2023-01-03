@@ -15,7 +15,12 @@ const App = () => {
   return (
     <div>
       {isLogin ? (
-        <Main name={name} loginState={loginState} id={id} />
+        <Main
+          name={name}
+          loginState={loginState}
+          id={id}
+          setIsLogin={setIsLogin}
+        />
       ) : (
         <Login
           setIsLogin={setIsLogin}
