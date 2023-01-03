@@ -14,18 +14,19 @@ const { state } = useLocation();
  const [Life,setLife]=useState(10)
  const [Atk,setAtk]=useState(0)
  const [itemDrop,setItemDrop]=useState(0)*/
-getMonster = async() => {
+getMonster = async(idM,nameM,img_idleM,img_atkM,img_takeHitM
+                   ,img_deadM,LifeM,AtkM,itemDropM) => {
     const Monster =await instance.get('/getMonster',
     {params:{
-        id: state .id,
-        name: state.name,
-        img_idle:state .img_idle ,
-        img_atk: state .img_atk,
-        img_takeHit: state .img_takeHit,
-        img_dead: state .img_dead,
-        Life:state . Life,
-        Atk:state .Atk ,
-        itemDrop:  state .itemDrop,a
+        id: id,
+        name: nameM,
+        img_idle:img_idleM ,
+        img_atk: img_atkM,
+        img_takeHit:img_takeHitM,
+        img_dead: img_deadM,
+        Life: LifeM,
+        Atk:AtkM ,
+        itemDrop: itemDropM
     }})
     return Monster;
 }
