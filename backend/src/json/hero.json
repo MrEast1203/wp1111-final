@@ -27,6 +27,7 @@
     "turn": 0,
     "money": 200,
     "max_life": 400,
-    "battle_card": 5
+    "battle_card": 5,
+    "deathRate": 0
   }
 ]

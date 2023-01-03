@@ -10,7 +10,7 @@ import Shop from "./Shop";
 import Modal from "../components/Modal";
 import BattleChoose from "./BattleChoose";
 import getDeathRate from "../functions/deathRate";
-import getItem from "../functions/item";
+import initHero from "../functions/initHero";
 
 const MainWrapper = styled.div`
   height: 100vh;
@@ -43,8 +43,21 @@ const Main = () => {
   const [IsTrain, setIsTrain] = useState(false);
   const [isRest, setIsRest] = useState(false);
 
+  //////////////玩家Data//////////////////////
+  const name = "";
+  const [energy, setEnergy] = useState(0);
+  const [atk, setAtk] = useState(0);
+  const [hp, setHp] = useState(0);
+  const [max_hp, setMax_hp] = useState(0);
+  const [money, setMoney] = useState(0);
+  const [items, setItems] = useState([]);
+  const [achieve, setAchieve] = useState([]);
+  const [itemsForDB, setItemsForDB] = useState([]);
+  const [achieveForDB, setAchieveForDB] = useState([]);
+  ///////////////////////////////////////////
+
   ////////////// 回合用 /////////////////////////
-  const [turn, setTurn] = useState(0);
+  // const [turn, setTurn] = useState(0);
   const [day, setDay] = useState(0);
   const [time, setTime] = useState(0);
   const [build, setBuild] = useState(0);
@@ -57,6 +70,17 @@ const Main = () => {
     // console.log(day);
     if (day === 0) {
       console.log("init hero");
+
+      initHero(
+        0,
+        setEnergy,
+        setAtk,
+        setHp,
+        setMax_hp,
+        setMoney,
+        setItemsForDB,
+        setAchieveForDB
+      );
       setDay(1);
     } else {
       console.log("update hero");
@@ -82,12 +106,12 @@ const Main = () => {
   ];
   //  getItem(3);
   const character = {
-    name: "無名英雄",
-    energy: 10,
-    atk: 10,
-    hp: 10,
-    max_hp: 20,
-    money: 1500,
+    name: name,
+    energy: energy,
+    atk: atk,
+    hp: hp,
+    max_hp: max_hp,
+    money: money,
     items: [
       { name: "Item1", content: "Content1\n售出：$100" },
       { name: "Item2", content: "Content2" },
