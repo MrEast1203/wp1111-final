@@ -196,9 +196,9 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   }, [gameOver]);
   useEffect(() => {
     if (trained === true) {
-      setHp((prev) => prev + 1000);
-      setMax_hp((prev) => prev + 1000);
-      setAtk((prev) => prev + 300);
+      setHp((prev) => prev + 40);
+      setMax_hp((prev) => prev + 40);
+      setAtk((prev) => prev + 10);
       setEnergy((prev) => prev + 3);
       setTrained(false);
     }

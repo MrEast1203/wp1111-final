@@ -93,9 +93,9 @@ const Battle = ({ character, battleType, setIsBattle }) => {
   }, [damageToMonster]);
   useEffect(() => {
     if ((hp <= 0 || character.hp <= 0) && isEnd === false) {
-      character.setAttack((prev) => prev + 10);
-      if (character.hp > 0) character.setHealth((prev) => prev + 30);
-      if (character.hp > 0) character.setMaxHealth((prev) => prev + 30);
+      character.setAttack((prev) => prev + 8);
+      if (character.hp > 0) character.setHealth((prev) => prev + 25);
+      if (character.hp > 0) character.setMaxHealth((prev) => prev + 25);
       character.setBattleCard((prev) => prev - 1);
       if (character.time === 2) {
         character.setTime(0);
