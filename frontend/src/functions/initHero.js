@@ -13,7 +13,9 @@ const initHero = async (
   setDay,
   setDeathRate
 ) => {
-  const data = await getHero(id);
+  const data = await getHero(id)
+    .then((data) => console.log("data", data))
+    .catch((err) => console.log("err", err));
   // console.log("id", id);
   // console.log("loginstate", loginState);
   // if (loginState === "continue") {
