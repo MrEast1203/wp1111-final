@@ -13,7 +13,8 @@ const initHero = async (
   setDay,
   setDeathRate
 ) => {
-  const data = await getHero(id)
+  console.log("id", id);
+  const data = await getHero("0")
     .then((data) => console.log("data", data))
     .catch((err) => console.log("err", err));
   // console.log("id", id);
