@@ -27,13 +27,6 @@ if (process.env.NODE_ENV === "development") {
 // init middleware
 // app.use(cors());
 app.use(express.json());
-if (process.env.NODE_ENV === "production") {
-  const __dirname = path.resolve();
-  app.use(express.static(path.join(__dirname, "../frontend", "build")));
-  app.get("/*", function (req, res) {
-    res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"));
-  });
-}
 const port = process.env.PORT || 4000;
 const dboptions = {
   useNewUrlParser: true,
@@ -48,6 +41,13 @@ mongoose.connect(process.env.MONGO_URL, dboptions).then(async (res) => {
 });
 
 routes(app);
+if (process.env.NODE_ENV === "production") {
+  const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, "../frontend", "build")));
+  app.get("/*", function (req, res) {
+    res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"));
+  });
+}
 app.listen(port, () => {
   console.log(`Server is up on port ${port}.`);
 });
