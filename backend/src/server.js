@@ -1,4 +1,6 @@
 // Use Hack2 as reference
+import path from "path";
+
 import express from "express";
 import cors from "cors";
 import routes from "./routes";
