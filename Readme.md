@@ -1,10 +1,9 @@
 # this is our final project
 
 1. `yarn install:all`
-2. `cd ..`
-3. add your .env in /backend
-   ![](https://i.imgur.com/wlyHD9U.png)
+2. ![](https://i.imgur.com/wlyHD9U.png)
    請根據圖示加一個 DB 到你的 mongodb
+3. add your .env in /backend
 
 ```
 MONGO_URL=

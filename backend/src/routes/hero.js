@@ -2,9 +2,16 @@ import Hero from "../models/hero";
 
 exports.GetHero = async (req, res) => {
   const id = req.query.id;
+  console.log("req", req);
+  console.log("id", id);
   await Hero.find({ id: id }).exec((err, data) => {
-    if (!err) res.status(200).send({ message: "success", contents: data });
-    else res.status(403).send({ message: "error", contents: [] });
+    if (!err) {
+      console.log("data", data);
+      res.status(200).send({ message: "success", contents: data });
+    } else {
+      console.log("err", err);
+      res.status(403).send({ message: "error", contents: [] });
+    }
   });
 };
 
