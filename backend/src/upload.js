@@ -55,16 +55,16 @@ const dataInit = async () => {
     console.log("Item DB is correct");
   }
 
-  const checkHero = await Hero.find();
-  const no_Hero = 1; //number of Item
+  // const checkHero = await Hero.find();
+  // const no_Hero = 1; //number of Item
 
-  if (checkHero.length !== no_Hero) {
-    console.log("Test Hero not exists");
-    await Hero.deleteMany({});
-    await Hero.insertMany(heroData);
-  } else {
-    console.log("Hero for test is here now");
-  }
+  // if (checkHero.length !== no_Hero) {
+  //   console.log("Test Hero not exists");
+  //   await Hero.deleteMany({});
+  //   await Hero.insertMany(heroData);
+  // } else {
+  //   console.log("Hero for test is here now");
+  // }
 };
 
 export { dataInit };
