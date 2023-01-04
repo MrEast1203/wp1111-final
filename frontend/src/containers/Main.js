@@ -92,6 +92,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   const [event, setEvent] = useState({});
   const dayparts = ["早上", "下午", "晚上"];
   const [gameOver, setGameOver] = useState(false);
+  const [win, setWin] = useState(false);
   // console.log("day", day);
   // console.log("time", time);
   const count = useRef(false);
@@ -155,6 +156,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
       );
       if (day > 1) setDeathRate(newDeathRate);
       if (newDeathRate >= 100 || hp <= 0) setGameOver(true);
+      if (day > 30 && newDeathRate < 100) setWin(true);
       setBuild(0);
       setTrained(false);
     } else if (count.current === false) {
@@ -164,6 +166,9 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
       // if (day === 0) setDay(1);
     }
   }, [day]);
+  useEffect(() => {
+    if (deathRate >= 100 || hp <= 0) setGameOver(true);
+  }, [time]);
   /////////////////////////////////////////////
   useEffect(() => {
     // setGameOver(false);
@@ -197,7 +202,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   }, [trained]);
   useEffect(() => {
     if (isRest === true) {
-      let newHp = Math.floor(Math.min(max_hp, hp * 1.2));
+      let newHp = Math.floor(Math.min(max_hp, hp + max_hp * 0.2));
       setHp(newHp);
     }
   }, [isRest]);
@@ -257,13 +262,6 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   //   />
   isEvent ? (
     <Event setIsEvent={setIsEvent} setIsBattle={setIsBattle} />
-  ) : gameOver ? (
-    <Modal
-      messageTitle="GameOver"
-      messageContent="You Lose"
-      time={"gg"}
-      setModal={setIsLogin}
-    />
   ) : (
     <MainWrapper>
       <BlockWrapper>
@@ -320,6 +318,20 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
           setTime={setTime}
           setDay={setDay}
           setBuild={"rest"}
+        />
+      ) : gameOver ? (
+        <Modal
+          messageTitle="GameOver"
+          messageContent="You Lose"
+          time={"gg"}
+          setModal={setIsLogin}
+        />
+      ) : win ? (
+        <Modal
+          messageTitle="The End"
+          messageContent="You Win"
+          time={"gg"}
+          setModal={setIsLogin}
         />
       ) : (
         <></>

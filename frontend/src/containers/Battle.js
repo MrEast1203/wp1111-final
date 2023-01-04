@@ -78,7 +78,7 @@ const Battle = ({ character, battleType, setIsBattle }) => {
   const [isEnd, setIsEnd] = useState(false);
 
   useEffect(() => {
-    if (damageToMonster !== 0) {
+    if (damageToMonster !== 0 && hp >= 0 && character.hp >= 0) {
       console.log("damageToMonster", damageToMonster);
       setHp(
         (prev) =>
@@ -94,8 +94,8 @@ const Battle = ({ character, battleType, setIsBattle }) => {
   useEffect(() => {
     if ((hp <= 0 || character.hp <= 0) && isEnd === false) {
       character.setAttack((prev) => prev + 10);
-      character.setHealth((prev) => prev + 30);
-      character.setMaxHealth((prev) => prev + 30);
+      if (character.hp > 0) character.setHealth((prev) => prev + 30);
+      if (character.hp > 0) character.setMaxHealth((prev) => prev + 30);
       character.setBattleCard((prev) => prev - 1);
       if (character.time === 2) {
         character.setTime(0);
@@ -125,7 +125,7 @@ const Battle = ({ character, battleType, setIsBattle }) => {
     let id = setInterval(showProgress, 10);
     const spacePress = (e) => {
       if (e.code === "Space") {
-        setDamageToMonster(width);
+        if (hp >= 0 && character.hp >= 0) setDamageToMonster(width);
         clearInterval(id);
         id = -1;
         width = 0;
