@@ -8,7 +8,8 @@ const getHero = async (ids) => {
       id: ids,
     },
   });
-  // console.log("getHero", contents);
+  console.log("getHero message", message);
+  console.log("getHero", contents);
   // contents=[] if not find
   return contents;
 };

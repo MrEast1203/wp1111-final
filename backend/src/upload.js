@@ -55,7 +55,8 @@ const dataInit = async () => {
     console.log("Item DB is correct");
   }
 
-  // const checkHero = await Hero.find();
+  const checkHero = await Hero.find();
+  console.log(checkHero);
   // const no_Hero = 1; //number of Item
 
   // if (checkHero.length !== no_Hero) {
