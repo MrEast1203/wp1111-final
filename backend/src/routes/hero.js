@@ -2,7 +2,7 @@ import Hero from "../models/hero";
 
 exports.GetHero = async (req, res) => {
   const id = req.query.id;
-  console.log("req", req);
+  // console.log("req", req);
   console.log("id", id);
   await Hero.find({ id: id }).exec((err, data) => {
     if (!err) {
@@ -30,7 +30,7 @@ exports.CreateHero = async (req, res) => {
 exports.UpdateHero = async (req, res) => {
   const body = req.body;
   try {
-    updated_hero = await Hero.updateOne({ id: body.id }, { $set: body });
+    const updated_hero = await Hero.updateOne({ id: body.id }, { $set: body });
     res.status(200).send({ message: "success", contents: updated_hero });
   } catch (err) {
     console.log(err);
