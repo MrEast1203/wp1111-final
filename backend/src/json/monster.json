@@ -7,7 +7,7 @@
     "img_takeHit": "https://i.imgur.com/qT5qZPP.gif",
     "img_dead": "https://i.imgur.com/f41YeLd.gif",
     "Life": 1000,
-    "Atk": 50,
+    "Atk": 42,
     "itemDrop": 16
   },
   {
@@ -17,8 +17,8 @@
     "img_atk": "https://i.imgur.com/gpetTt2.gif",
     "img_takeHit": "https://i.imgur.com/NbOFVgG.gif",
     "img_dead": "https://i.imgur.com/EiWAZOt.gif",
-    "Life": 1500,
-    "Atk": 60,
+    "Life": 1666,
+    "Atk": 66,
     "itemDrop": 17
   },
   {
@@ -28,8 +28,8 @@
     "img_atk": "https://i.imgur.com/AmFqYUe.gif",
     "img_takeHit": "https://i.imgur.com/HFopbuA.gif",
     "img_dead": "https://i.imgur.com/6WmXKf4.gif",
-    "Life": 2000,
-    "Atk": 70,
+    "Life": 4444,
+    "Atk": 44,
     "itemDrop": -1
   },
   {
@@ -39,8 +39,8 @@
     "img_atk": "https://i.imgur.com/wT400XV.gif",
     "img_takeHit": "https://i.imgur.com/p72lJ25.gif",
     "img_dead": "https://i.imgur.com/HIAD2D5.gif",
-    "Life": 100,
-    "Atk": 22,
+    "Life": 300,
+    "Atk": 18,
     "itemDrop": 26
   },
   {
@@ -50,8 +50,8 @@
     "img_atk": "https://i.imgur.com/nJQlB8K.gif",
     "img_takeHit": "https://i.imgur.com/EbcD4T9.gif",
     "img_dead": "https://i.imgur.com/TpsbP68.gif",
-    "Life": 250,
-    "Atk": 20,
+    "Life": 450,
+    "Atk": 16,
     "itemDrop": 27
   },
   {
@@ -61,8 +61,8 @@
     "img_atk": "https://i.imgur.com/6GChU3L.gif",
     "img_takeHit": "https://i.imgur.com/xNfsXxz.gif",
     "img_dead": "https://i.imgur.com/HCGRmDG.gif",
-    "Life": 220,
-    "Atk": 15,
+    "Life": 520,
+    "Atk": 20,
     "itemDrop": 28
   },
   {
@@ -72,8 +72,8 @@
     "img_atk": "https://i.imgur.com/Fss3wKC.gif",
     "img_takeHit": "https://i.imgur.com/LZ2cFvz.gif",
     "img_dead": "https://i.imgur.com/KvMIA12.gif",
-    "Life": 500,
-    "Atk": 18,
+    "Life": 600,
+    "Atk": 23,
     "itemDrop": 29
   }
 ]

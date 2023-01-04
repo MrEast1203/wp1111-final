@@ -153,7 +153,7 @@ const Battle = ({ character, battleType, setIsBattle }) => {
         setModal={setIsBattle}
       />
       <BattleWrapper>
-        <BattleTitle>{battleType}</BattleTitle>
+        <BattleTitle></BattleTitle>
         <BattleRegion className="character">
           <ul>
             <li>{character.name}</li>

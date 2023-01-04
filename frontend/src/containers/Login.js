@@ -39,7 +39,7 @@ const Login = ({
 
   return (
     <LoginWrapper>
-      <h1>遊戲名稱</h1>
+      <h1>網頁RPG</h1>
       <ButtonList items={LoginButtons} />
       {loginState ? (
         <LoginModal
@@ -57,7 +57,7 @@ const Login = ({
       {isManual ? (
         <Modal
           messageTitle="遊戲說明"
-          messageContent="遊戲說明內容"
+          messageContent="https://hackmd.io/@hTj4gp5kQsSU7cJ-i_xCVg/SJyNNqx5j"
           time={null}
           setModal={() => {
             setIsManual(false);

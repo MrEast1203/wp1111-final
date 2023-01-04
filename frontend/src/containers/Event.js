@@ -64,7 +64,7 @@ const Event = ({
       options: ["Ok", "打不蠃啦"],
       item_get: [0, -1],
       buff_value: [0, 0],
-      img: "https://i.imgur.com/71vNzDp.png",
+      img: "https://i.imgur.com/G8Drp2I.png",
     };
   } else if (day === 20) {
     testEvent = {
@@ -74,7 +74,7 @@ const Event = ({
       options: ["我來了", "打咩打咩"],
       item_get: [1, -1],
       buff_value: [0, 0],
-      img: "https://i.imgur.com/71vNzDp.png",
+      img: "https://i.imgur.com/KFlI9Nr.png",
     };
   } else if (day === 30) {
     testEvent = {
@@ -84,7 +84,7 @@ const Event = ({
       options: ["上呀！！！！"],
       item_get: [2],
       buff_value: [0, 0],
-      img: "https://i.imgur.com/71vNzDp.png",
+      img: "https://i.imgur.com/6uG2wLl.png",
     };
   } else {
     testEvent = {
