@@ -48,16 +48,55 @@ const EventOptions = styled.ul`
   }
 `;
 
-const Event = ({ setIsEvent, setIsBattle }) => {
-  const testEvent = {
-    id: 7,
-    name: "見到神獸",
-    description: "想要誰的加護",
-    options: ["朱雀", "玄武", "白虎", "青龍"],
-    item_get: [40, 23, 24, 25],
-    buff_value: [0, 0, 0, 0],
-    img: "https://i.imgur.com/71vNzDp.png",
-  };
+const Event = ({
+  setIsEvent,
+  setIsBattle,
+  setMonsterID,
+  day,
+  setDeathRate,
+}) => {
+  let testEvent;
+  if (day === 10) {
+    testEvent = {
+      id: 7,
+      name: "First Boss",
+      description: "魔王軍來了, 勇者快打敗他！",
+      options: ["Ok", "打不蠃啦"],
+      item_get: [0, -1],
+      buff_value: [0, 0],
+      img: "https://i.imgur.com/71vNzDp.png",
+    };
+  } else if (day === 20) {
+    testEvent = {
+      id: 7,
+      name: "Second Boss",
+      description: "勇者A夢救命!",
+      options: ["我來了", "打咩打咩"],
+      item_get: [1, -1],
+      buff_value: [0, 0],
+      img: "https://i.imgur.com/71vNzDp.png",
+    };
+  } else if (day === 30) {
+    testEvent = {
+      id: 7,
+      name: "Final Boss",
+      description: "魔王來了！！！！",
+      options: ["上呀！！！！"],
+      item_get: [2],
+      buff_value: [0, 0],
+      img: "https://i.imgur.com/71vNzDp.png",
+    };
+  } else {
+    testEvent = {
+      id: 7,
+      name: "First Boss",
+      description: "魔王軍來了, 勇者快打敗他！",
+      options: ["Ok", "打不蠃啦"],
+      item_get: [0, -1],
+      buff_value: [0, 0],
+      img: "https://i.imgur.com/71vNzDp.png",
+    };
+  }
 
   const eventOptionsBtn = [];
 
@@ -68,10 +107,12 @@ const Event = ({ setIsEvent, setIsBattle }) => {
           content={testEvent.options[i]}
           buff_value={testEvent.buff_value[i]}
           operation={() => {
-            if (testEvent.item_get[i] === 40 || testEvent.item_get[i] === 41) {
+            if (testEvent.item_get[i] >= 0) {
+              setMonsterID(testEvent.item_get[i]);
               setIsBattle(true);
               setIsEvent(false);
             } else {
+              setDeathRate((prev) => prev + Math.floor(10));
               setIsEvent(false);
             }
           }}

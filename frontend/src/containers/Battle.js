@@ -136,13 +136,11 @@ const Battle = ({ character, battleType, setIsBattle }) => {
   };
 
   useEffect(() => {
-    battleMonster(
-      Math.floor(Math.random() * 4) + 3,
-      setName,
-      setAtk,
-      setHp,
-      setAtkImg
-    );
+    let id = Math.floor(Math.random() * 4) + 3;
+    if (battleType === 0) id = 0;
+    else if (battleType === 1) id = 1;
+    else if (battleType === 2) id = 2;
+    battleMonster(id, setName, setAtk, setHp, setAtkImg);
     handleBattleBar();
   }, []);
 

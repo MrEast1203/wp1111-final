@@ -93,6 +93,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   const dayparts = ["早上", "下午", "晚上"];
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
+  const [monsterID, setMonsterID] = useState(999);
   // console.log("day", day);
   // console.log("time", time);
   const count = useRef(false);
@@ -126,17 +127,17 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
     // console.log(count.current);
     if (count.current && count2.current) {
       // console.log(day);
-      if (day === 3) {
+      if (day === 10) {
         console.log("出現event 1");
-        // getEvent(1, setEvent)
-        // setIsEvent(true);
-        console.log("event", event);
+        setIsEvent(true);
       }
-      if (day === 14) {
-        console.log("出現event 0");
-      }
-      if (day === 21) {
+      if (day === 20) {
         console.log("出現event 2");
+        setIsEvent(true);
+      }
+      if (day === 30) {
+        console.log("final boss");
+        setIsEvent(true);
       }
       console.log("update hero");
       let newDeathRate = getDeathRate(deathRate, build);
@@ -168,6 +169,8 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   }, [day]);
   useEffect(() => {
     if (deathRate >= 100 || hp <= 0) setGameOver(true);
+    if (day === 30 && time === 1 && hp > 0 && deathRate < 100) setWin(true);
+    setMonsterID(999);
   }, [time]);
   /////////////////////////////////////////////
   useEffect(() => {
@@ -193,9 +196,9 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   }, [gameOver]);
   useEffect(() => {
     if (trained === true) {
-      setHp((prev) => prev - 100);
-      // setMax_hp((prev) => prev + 100);
-      // setAtk((prev) => prev + 30);
+      setHp((prev) => prev + 1000);
+      setMax_hp((prev) => prev + 1000);
+      setAtk((prev) => prev + 300);
       setEnergy((prev) => prev + 3);
       setTrained(false);
     }
@@ -253,7 +256,11 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   };
 
   return isBattle ? (
-    <Battle character={character} battleType="戰鬥" setIsBattle={setIsBattle} />
+    <Battle
+      character={character}
+      battleType={monsterID}
+      setIsBattle={setIsBattle}
+    />
   ) : // ) : isShop ? (
   //   <Shop
   //     money={character.money}
@@ -261,7 +268,13 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   //     setIsShop={() => setIsShop(false)}
   //   />
   isEvent ? (
-    <Event setIsEvent={setIsEvent} setIsBattle={setIsBattle} />
+    <Event
+      setIsEvent={setIsEvent}
+      setIsBattle={setIsBattle}
+      setMonsterID={setMonsterID}
+      day={day}
+      setDeathRate={setDeathRate}
+    />
   ) : (
     <MainWrapper>
       <BlockWrapper>
