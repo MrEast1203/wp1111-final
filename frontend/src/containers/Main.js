@@ -8,6 +8,7 @@ import Items from "../components/Items";
 import Achievement from "../components/Achievement";
 import Shop from "./Shop";
 import Modal from "../components/Modal";
+import Battle from "./Battle";
 import BattleChoose from "./BattleChoose";
 import getDeathRate from "../functions/deathRate";
 import initHero from "../functions/initHero";
@@ -46,7 +47,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   const [isBuild, setIsBuild] = useState(false);
   const [IsTrain, setIsTrain] = useState(false);
   const [isRest, setIsRest] = useState(false);
-  const [isEvent, setIsEvent] = useState(false);
+  const [isEvent, setIsEvent] = useState(true);
 
   //////////////玩家Data//////////////////////
   const [playerName, setPlayerName] = useState(
@@ -247,7 +248,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   };
 
   return isBattle ? (
-    <BattleChoose character={character} />
+    <Battle character={character} battleType="戰鬥" setIsBattle={setIsBattle} />
   ) : // ) : isShop ? (
   //   <Shop
   //     money={character.money}
@@ -255,7 +256,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   //     setIsShop={() => setIsShop(false)}
   //   />
   isEvent ? (
-    <Event setIsEvent={setIsEvent} />
+    <Event setIsEvent={setIsEvent} setIsBattle={setIsBattle} />
   ) : gameOver ? (
     <Modal
       messageTitle="GameOver"

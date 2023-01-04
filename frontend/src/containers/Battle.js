@@ -68,12 +68,13 @@ const BattleBar = styled.div`
   }
 `;
 
-const Battle = ({ character, battleType }) => {
+const Battle = ({ character, battleType, setIsBattle }) => {
   const [name, setName] = useState("");
   const [atk, setAtk] = useState(0);
   const [hp, setHp] = useState(0);
   const [atkImg, setAtkImg] = useState("");
   const [damageToMonster, setDamageToMonster] = useState(0);
+
   useEffect(() => {
     if (damageToMonster !== 0) {
       console.log("damageToMonster", damageToMonster);
@@ -93,7 +94,7 @@ const Battle = ({ character, battleType }) => {
           character.setTime(0);
           character.setDay((day) => day + 1);
         } else character.setTime((prev) => prev + 1);
-        // return to Main.js
+        setIsBattle(false);
       }
       handleBattleBar();
     }
