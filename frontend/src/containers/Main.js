@@ -41,7 +41,7 @@ const ItemsWrpper = styled.div`
 `;
 
 const Main = ({ name, loginState, id, setIsLogin }) => {
-  const [isShop, setIsShop] = useState(false);
+  // const [isShop, setIsShop] = useState(false);
   const [isBattle, setIsBattle] = useState(false);
   const [isBuild, setIsBuild] = useState(false);
   const [IsTrain, setIsTrain] = useState(false);
@@ -218,7 +218,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
       },
     },
     { name: "建築", operation: () => setIsBuild(true) },
-    { name: "商店", operation: () => setIsShop(true) },
+    // { name: "商店", operation: () => setIsShop(true) },
     { name: "休息", operation: () => setIsRest(true) },
   ];
   //  getItem(3);
@@ -248,14 +248,14 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
 
   return isBattle ? (
     <BattleChoose character={character} />
-  ) : isShop ? (
-    <Shop
-      money={character.money}
-      items={character.items}
-      setIsShop={() => setIsShop(false)}
-    />
-  ) : isEvent ? (
-    <Event />
+  ) : // ) : isShop ? (
+  //   <Shop
+  //     money={character.money}
+  //     items={character.items}
+  //     setIsShop={() => setIsShop(false)}
+  //   />
+  isEvent ? (
+    <Event setIsEvent={setIsEvent} />
   ) : gameOver ? (
     <Modal
       messageTitle="GameOver"
@@ -267,9 +267,9 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
     <MainWrapper>
       <BlockWrapper>
         <Period timePeriod={dayparts[time]} days={day} />
-        <ItemsWrpper>
+        {/* <ItemsWrpper>
           <Items items={character.items} />
-        </ItemsWrpper>
+        </ItemsWrpper> */}
       </BlockWrapper>
       <BlockWrapper>
         <CharacterMain

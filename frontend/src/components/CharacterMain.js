@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { HiOutlineLightningBolt } from "react-icons/hi";
 import { TbSwords } from "react-icons/tb";
 import { FiHeart } from "react-icons/fi";
-import Money from "./Money";
+// import Money from "./Money";
 
 const CharacterWrapper = styled.div`
   margin: 0 1%;
@@ -48,9 +48,9 @@ const CharacterMain = ({ name, energy, atk, hp, max_hp, money }) => {
     <CharacterWrapper>
       <div>
         <CharacterName>{name}</CharacterName>
-        <Money money={money} />
+        {/* <Money money={money} /> */}
       </div>
-      <CharacterImg src={require("../images/Hero-sample.png")} alt={name} />
+      <CharacterImg src={"https://i.imgur.com/ugKc2G9.gif"} alt={name} />
       <CharacterInfo>
         <li className="energy">
           <HiOutlineLightningBolt style={{ marginRight: "0.5rem" }} /> {energy}

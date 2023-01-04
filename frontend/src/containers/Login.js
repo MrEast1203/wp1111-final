@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ButtonList from "./ButtonList";
 import LoginModal from "../components/LoginModal";
+import Modal from "../components/Modal";
 
 const LoginWrapper = styled.div`
   height: 100vh;
@@ -27,11 +28,13 @@ const Login = ({
   checkExists,
   setCheckExists,
 }) => {
+  const [isManual, setIsManual] = useState(false);
+
   const LoginButtons = [
     { name: "新遊戲", operation: () => setloginState("new") },
     { name: "繼續", operation: () => setloginState("continue") },
-    { name: "遊戲說明", operation: null },
-    { name: "交換系統", operation: null },
+    { name: "遊戲說明", operation: () => setIsManual(true) },
+    // { name: "交換系統", operation: null },
   ];
 
   return (
@@ -47,6 +50,21 @@ const Login = ({
           id={id}
           checkExists={checkExists}
           setCheckExists={setCheckExists}
+        />
+      ) : (
+        <></>
+      )}
+      {isManual ? (
+        <Modal
+          messageTitle="遊戲說明"
+          messageContent="遊戲說明內容"
+          time={null}
+          setModal={() => {
+            setIsManual(false);
+          }}
+          setTime={null}
+          setDay={null}
+          setBuild={null}
         />
       ) : (
         <></>

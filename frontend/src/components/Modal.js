@@ -13,7 +13,7 @@ const ModalWrapper = styled.div`
 
 const ModalCard = styled.div`
   width: 30rem;
-  height: 20rem;
+  height: 25rem;
   word-wrap: break-word;
   background: linear-gradient(45deg, #000e2b, #013b63);
   color: #fff;
@@ -78,6 +78,7 @@ const handleOperation = (time, setModal, setTime, setDay, setBuild) => {
 const Modal = ({
   messageTitle,
   messageContent,
+  height,
   time,
   setModal,
   setTime,

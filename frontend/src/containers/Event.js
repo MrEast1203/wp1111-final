@@ -48,7 +48,7 @@ const EventOptions = styled.ul`
   }
 `;
 
-const Event = () => {
+const Event = ({ setIsEvent }) => {
   const testEvent = {
     id: 7,
     name: "見到神獸",
@@ -64,7 +64,16 @@ const Event = () => {
   for (let i = 0; i < testEvent.options.length; i++) {
     eventOptionsBtn.push(
       <li>
-        <Button content={testEvent.options[i]} />
+        <Button
+          content={testEvent.options[i]}
+          buff_value={testEvent.buff_value[i]}
+          operation={() => {
+            if (testEvent.item_get[i] === 40 || testEvent.item_get[i] === 41) {
+            } else {
+              setIsEvent(false);
+            }
+          }}
+        />
       </li>
     );
   }
