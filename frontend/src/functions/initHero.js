@@ -20,7 +20,7 @@ const initHero = async (
   //   data = await getHero(id);
   //   // console.log("here");
   // } else data = await getHero("-1fsafgsg");
-  // console.log("hi", data[0]);
+  console.log("hi", data[0]);
   setPlayerName(data[0].name);
   setEnergy(data[0].battle_card);
   setAtk(data[0].atk);
