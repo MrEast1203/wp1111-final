@@ -47,7 +47,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   const [isBuild, setIsBuild] = useState(false);
   const [IsTrain, setIsTrain] = useState(false);
   const [isRest, setIsRest] = useState(false);
-  const [isEvent, setIsEvent] = useState(true);
+  const [isEvent, setIsEvent] = useState(false);
 
   //////////////玩家Data//////////////////////
   const [playerName, setPlayerName] = useState(
