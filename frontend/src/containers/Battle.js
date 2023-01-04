@@ -34,8 +34,8 @@ const BattleRegion = styled.div`
   }
 
   & img {
-    width: 25rem;
-    height: 25rem;
+    width: 50rem;
+    height: 50rem;
   }
 
   & ul {
@@ -205,7 +205,11 @@ const Battle = ({ character, battleType, setIsBattle }) => {
         <img src={"https://i.imgur.com/ugKc2G9.gif"} alt={character.name} />
       </BattleRegion>
       <BattleRegion className="enemy">
-        <img src={atkImg} alt={character.name} />
+        <img
+          src={atkImg}
+          style={{ transform: "scaleX(-1)" }}
+          alt={character.name}
+        />
         <ul>
           <li>{enemy.name}</li>
           <li>
