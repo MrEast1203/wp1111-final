@@ -50,7 +50,7 @@ const CharacterMain = ({ name, energy, atk, hp, max_hp, money }) => {
         <CharacterName>{name}</CharacterName>
         {/* <Money money={money} /> */}
       </div>
-      <CharacterImg src={"https://i.imgur.com/ugKc2G9.gif"} alt={name} />
+      <CharacterImg src={"https://i.imgur.com/yD9WRlW.gif"} alt={name} />
       <CharacterInfo>
         <li className="energy">
           <HiOutlineLightningBolt style={{ marginRight: "0.5rem" }} /> {energy}

@@ -4,6 +4,7 @@ import { TbSwords } from "react-icons/tb";
 import { FiHeart } from "react-icons/fi";
 import getMonster from "../functions/monster";
 import battleMonster from "../functions/battleMonster";
+import Modal from "../components/Modal";
 
 const BattleWrapper = styled.div`
   height: 100vh;
@@ -71,9 +72,10 @@ const BattleBar = styled.div`
 const Battle = ({ character, battleType, setIsBattle }) => {
   const [name, setName] = useState("");
   const [atk, setAtk] = useState(0);
-  const [hp, setHp] = useState(0);
+  const [hp, setHp] = useState(1);
   const [atkImg, setAtkImg] = useState("");
   const [damageToMonster, setDamageToMonster] = useState(0);
+  const [isEnd, setIsEnd] = useState(false);
 
   useEffect(() => {
     if (damageToMonster !== 0) {
@@ -85,20 +87,24 @@ const Battle = ({ character, battleType, setIsBattle }) => {
       character.setHealth(
         (prev) => prev - Math.floor(atk * (1 + Math.random()))
       );
-      if (hp <= 0 || character.hp <= 0) {
-        character.setAttack((prev) => prev + 10);
-        character.setHealth((prev) => prev + 30);
-        character.setMaxHealth((prev) => prev + 30);
-        character.setBattleCard((prev) => prev - 1);
-        if (character.time === 2) {
-          character.setTime(0);
-          character.setDay((day) => day + 1);
-        } else character.setTime((prev) => prev + 1);
-        setIsBattle(false);
-      }
+
       handleBattleBar();
     }
   }, [damageToMonster]);
+  useEffect(() => {
+    if ((hp <= 0 || character.hp <= 0) && isEnd === false) {
+      character.setAttack((prev) => prev + 10);
+      character.setHealth((prev) => prev + 30);
+      character.setMaxHealth((prev) => prev + 30);
+      character.setBattleCard((prev) => prev - 1);
+      if (character.time === 2) {
+        character.setTime(0);
+        character.setDay((day) => day + 1);
+      } else character.setTime((prev) => prev + 1);
+      // setIsBattle(false);
+      setIsEnd(true);
+    }
+  }, [character.hp]);
 
   //console.log(character);
   const enemy = {
@@ -140,7 +146,50 @@ const Battle = ({ character, battleType, setIsBattle }) => {
     handleBattleBar();
   }, []);
 
-  return (
+  return isEnd ? (
+    <>
+      <Modal
+        messageTitle={"End"}
+        messageContent={"戰鬥結束🔚"}
+        time={"gg"}
+        setModal={setIsBattle}
+      />
+      <BattleWrapper>
+        <BattleTitle>{battleType}</BattleTitle>
+        <BattleRegion className="character">
+          <ul>
+            <li>{character.name}</li>
+            <li>
+              <TbSwords style={{ marginRight: "0.5rem" }} />
+              {character.atk}
+            </li>
+            <li>
+              <FiHeart style={{ marginRight: "0.5rem" }} />
+              {character.hp}
+            </li>
+          </ul>
+        </BattleRegion>
+        <BattleRegion className="enemy">
+          <ul>
+            <li>{enemy.name}</li>
+            <li>
+              <TbSwords style={{ marginRight: "0.5rem" }} />
+              {enemy.atk}
+            </li>
+            <li>
+              <FiHeart style={{ marginRight: "0.5rem" }} />
+              {enemy.hp}
+            </li>
+          </ul>
+        </BattleRegion>
+        <BattleBarRegion>
+          <BattleBar>
+            <div className="bar"></div>
+          </BattleBar>
+        </BattleBarRegion>
+      </BattleWrapper>
+    </>
+  ) : (
     <BattleWrapper>
       <BattleTitle>{battleType}</BattleTitle>
       <BattleRegion className="character">
