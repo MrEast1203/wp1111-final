@@ -13,10 +13,10 @@ const initHero = async (
   setDay,
   setDeathRate
 ) => {
-  console.log("id", id);
+  // console.log("id", id);
   const data = await getHero(id)
     .then((data) => {
-      console.log("data", data);
+      // console.log("data", data);
       setPlayerName(data[0].name);
       setEnergy(data[0].battle_card);
       setAtk(data[0].atk);
@@ -35,7 +35,7 @@ const initHero = async (
   //   data = await getHero(id);
   //   // console.log("here");
   // } else data = await getHero("-1fsafgsg");
-  console.log("hi", data);
+  // console.log("hi", data);
   // setPlayerName(data[0].name);
   // setEnergy(data[0].battle_card);
   // setAtk(data[0].atk);

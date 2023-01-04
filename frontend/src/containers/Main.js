@@ -118,8 +118,8 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
       );
     } else {
       console.log("createHero");
-      console.log("id", id);
-      console.log("name", name);
+      // console.log("id", id);
+      // console.log("name", name);
       createHero(id, name);
     }
   }, []);
@@ -128,15 +128,15 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
     if (count.current && count2.current) {
       // console.log(day);
       if (day === 10) {
-        console.log("出現event 1");
+        // console.log("出現event 1");
         setIsEvent(true);
       }
       if (day === 20) {
-        console.log("出現event 2");
+        // console.log("出現event 2");
         setIsEvent(true);
       }
       if (day === 30) {
-        console.log("final boss");
+        // console.log("final boss");
         setIsEvent(true);
       }
       console.log("update hero");
@@ -190,7 +190,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
         5,
         0
       );
-      console.log("event GG");
+      // console.log("event GG");
       // setIsLogin(false);
     }
   }, [gameOver]);

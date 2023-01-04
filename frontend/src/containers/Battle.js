@@ -79,7 +79,7 @@ const Battle = ({ character, battleType, setIsBattle }) => {
 
   useEffect(() => {
     if (damageToMonster !== 0 && hp >= 0 && character.hp >= 0) {
-      console.log("damageToMonster", damageToMonster);
+      // console.log("damageToMonster", damageToMonster);
       setHp(
         (prev) =>
           prev - Math.floor((character.atk * damageToMonster * 1.75) / 100)
@@ -205,11 +205,15 @@ const Battle = ({ character, battleType, setIsBattle }) => {
         <img src={"https://i.imgur.com/ugKc2G9.gif"} alt={character.name} />
       </BattleRegion>
       <BattleRegion className="enemy">
-        <img
-          src={atkImg}
-          style={{ transform: "scaleX(-1)" }}
-          alt={character.name}
-        />
+        {battleType === 1 ? (
+          <img src={atkImg} alt={character.name} />
+        ) : (
+          <img
+            src={atkImg}
+            style={{ transform: "scaleX(-1)" }}
+            alt={character.name}
+          />
+        )}
         <ul>
           <li>{enemy.name}</li>
           <li>

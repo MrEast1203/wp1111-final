@@ -27,7 +27,7 @@ const updateHero = async (
     battle_card: heroBattleCard,
     deathRate: heroDeathRate,
   });
-  console.log("updateHero", contents);
+  // console.log("updateHero", contents);
   return contents;
 };
 export default updateHero;
