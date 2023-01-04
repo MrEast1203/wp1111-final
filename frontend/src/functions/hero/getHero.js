@@ -1,6 +1,6 @@
 import instance from "../../api";
 const getHero = async (ids) => {
-  // console.log("ids");
+  console.log("getHero ids", ids);
   const {
     data: { message, contents },
   } = await instance.get("/getHero", {
