@@ -6,7 +6,7 @@ import cors from "cors";
 import routes from "./routes";
 import mongoose from "mongoose";
 import { dataInit } from "./upload";
-import dotenv from "dotenv-defaults";
+require("dotenv").config();
 const app = express();
 if (process.env.NODE_ENV === "development") {
   app.use(cors());
@@ -24,7 +24,6 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
-routes(app);
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
   app.use(express.static(path.join(__dirname, "../frontend", "build")));
@@ -33,10 +32,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 const port = process.env.PORT || 4000;
-app.listen(port, () => {
-  console.log(`Server is up on port ${port}.`);
-});
-dotenv.config();
 const dboptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -47,4 +42,9 @@ mongoose.connect(process.env.MONGO_URL, dboptions).then(async (res) => {
     console.log("Reset Mode: reset the data");
     dataInit();
   }
+});
+
+routes(app);
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}.`);
 });
