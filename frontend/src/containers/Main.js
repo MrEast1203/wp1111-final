@@ -97,7 +97,7 @@ const Main = ({ name, loginState, id, setIsLogin }) => {
   // console.log("day", day);
   // console.log("time", time);
   const count = useRef(false);
-  const count2 = useRef(true);
+  const count2 = useRef(false);
   let checkNewGame = true;
   useEffect(() => {
     console.log("init hero");
